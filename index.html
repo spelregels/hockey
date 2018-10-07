@@ -57,7 +57,8 @@ li {
 	padding-top : 5px;
 }
 
-/* STIJLEN VOOR SPELREGELS */
+/* STIJLEN VOOR SPELREGELS =================================== */
+
 th.hoofdstuk {
 	text-align : left; 
 	padding-bottom : 10px; 
@@ -88,7 +89,8 @@ td.artikel {
 	border-collapse	:collapse;
 }
 
-/* STIJLEN VOOR INDEX */
+/* STIJLEN VOOR INDEX =================================== */
+
 table.kruisverwijzing {
 	background-color : #F8F8F8;
 	padding-left : 10px;
@@ -125,7 +127,8 @@ td.kruisverwijzing {
 	color : #777777;
 }
 
-/* STIJLEN VOOR HET MENU ONDERIN DE PAGINA */
+/* STIJLEN VOOR HET MENU ONDERIN DE PAGINA =================================== */
+
 div.menu {
 	width : 100%;
 	height : 50px;
@@ -146,18 +149,21 @@ table.menu {
 	border-collapse : collapse;
 }
 
+/* STIJL VOOR WITRUIMTE TUSSEN HULPTABELLEN/INDEX ETC =================================== */
+
 .witruimte {
 	height : 700px;
 }
+
+/* STIJL VOOR BEGRIPPENLIIJST =================================== */
+
 div.begrippen {
 	padding-left : 10px;
 	padding-right : 10px;
 }
 
-/* STIJLEN VOOR HULPTABEL SLAGEN */
-#slagen table {
-	width : 100%;
-}
+/* STIJLEN VOOR HULPTABEL SLAGEN =================================== */
+
 #slagen td {
 	padding-top : 10px;
 	padding-bottom : 10px;
@@ -165,36 +171,42 @@ div.begrippen {
 	height : 2rem;
 	width : 16%;
 }
-#slagen th {
-	background-color : #EF790C;
-	color : #FFFFFF;
+
+/* STIJLEN VOOR HULPTABEL STRAFFEN =================================== */
+
+#straffen td {
 	padding-top : 10px;
 	padding-bottom : 10px;
-	border-left : solid 4px #FFFFFF;
+	padding-left : 10px;
+	padding-right : 10px;
+	text-align : center;
+	height : 2rem;
+	width : 20%;
 }
-#slagen th a:hover {
-	color : #000000; 
-}
+
+/* STIJLEN VOOR ALLE HULPTABELLEN =================================== */
+
 .rood {
 	background-color : #FF0000;
 	color : #FFFFFF;
-	border : solid 4px #FFFFFF; 
+	border-top : solid 4px #FFFFFF; 
+	border-right : solid 4px #FFFFFF; 
 }
 .geel {
 	background-color : #FFBB00;
-	border : solid 4px #FFFFFF; 
+	border-top : solid 4px #FFFFFF; 
+	border-right : solid 4px #FFFFFF; 
 }
 .groen {
 	background-color : #00FF00;
-	border : solid 4px #FFFFFF; 
+	border-top : solid 4px #FFFFFF; 
+	border-right : solid 4px #FFFFFF; 
 }
 .grijs {
 	background-color : #DDDDDD;
 	font-weight : bold;
-	border : solid 4px #FFFFFF; 
-}
-.grijs.links {
-	border-left : none;
+	border-top : solid 4px #FFFFFF; 
+	border-right : solid 4px #FFFFFF; 
 }
 .grijs.rechts {
 	border-right : none;
@@ -727,17 +739,17 @@ Voordeel: er wordt alleen een straf opgelegd wanneer een speler of een team nade
 
 <tr><td class="artikelnummer"><a class="ref" id="12.2">12.2</a></td><td class="artikel">
 Een <a href="#13.2">vrije slag</a> wordt gegeven aan de tegenpartij voor:
-<ol><li>een overtreding van een speler in het gebied tussen de 23-meterlijnen;
+<ol><li><a class="ref" id="12.2a"></a>een overtreding van een speler in het gebied tussen de 23-meterlijnen;
 </li><li>een overtreding van een aanvaller in het 23-metergebied van de tegenpartij;
-</li><li>een onopzettelijke overtreding van een verdediger in zijn 23-metergebied, maar buiten zijn cirkel.
+</li><li><a class="ref" id="12.2c"></a>een onopzettelijke overtreding van een verdediger in zijn 23-metergebied, maar buiten zijn cirkel.
 </li></ol>
 </td></tr>
 
 <tr><td class="artikelnummer"><a class="ref" id="12.3">12.3</a></td><td class="artikel">
 Een <a href="#13.3">strafcorner</a> wordt toegekend:
-<ol><li>voor een overtreding van een verdediger in zijn cirkel, waarbij niet het maken van een doelpunt wordt voorkomen;
-</li><li>voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die geen balbezit heeft, noch een mogelijkheid heeft de bal te spelen;
-</li><li>voor een opzettelijke overtreding van een verdediger buiten zijn cirkel, maar binnen zijn 23-metergebied;
+<ol><li><a class="ref" id="12.3a"></a>voor een overtreding van een verdediger in zijn cirkel, waarbij niet het maken van een doelpunt wordt voorkomen;
+</li><li><a class="ref" id="12.3b"></a>voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die geen balbezit heeft, noch een mogelijkheid heeft de bal te spelen;
+</li><li><a class="ref" id="12.3c"></a>voor een opzettelijke overtreding van een verdediger buiten zijn cirkel, maar binnen zijn 23-metergebied;
 </li><li>voor het opzettelijk over de achterlijn spelen van de bal door een verdediger;
 <div class="opmerking">KNHB: doelverdedigers en veldspelers met de rechten van een doelverdediger mogen de bal van hun stick, hun beschermende uitrusting of enig deel van hun lichaam in iedere gewenste richting laten afkaatsen, ook over de achterlijn.</div>
 </li><li>wanneer de bal in de cirkel komt vast te zitten in de kleding of uitrusting van een (doel)verdediger.
@@ -746,8 +758,8 @@ Een <a href="#13.3">strafcorner</a> wordt toegekend:
 
 <tr><td class="artikelnummer"><a class="ref" id="12.4">12.4</a></td><td class="artikel">
 Een <a href="#13.8">strafbal</a> wordt toegekend:
-<ol><li>voor een overtreding van een verdediger in zijn cirkel, waardoor het waarschijnlijk maken van een doelpunt wordt voorkomen;
-</li><li>voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die in balbezit is of een mogelijkheid heeft om de bal te spelen.
+<ol><li><a class="ref" id="12.4a"></a>voor een overtreding van een verdediger in zijn cirkel, waardoor het waarschijnlijk maken van een doelpunt wordt voorkomen;
+</li><li><a class="ref" id="12.4b"></a>voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die in balbezit is of een mogelijkheid heeft om de bal te spelen.
 </li></ol>
 </td></tr>
 
@@ -1068,24 +1080,28 @@ goal wordt gescoord, dan wel een speler van dat team.</p>
 <a href="#12.3">strafcorner</a>
 </td><td class="kruisverwijzing">
 <a href="#13.3">nemen</a>&nbsp;|
-<a href="#13.7">straffen&nbsp;bij&nbsp;nemen</a>&nbsp;-&nbsp;<a href="#strafcornertabel">tabel</a>&nbsp;|
-<a href="#13.3b">slagen&nbsp;toegestaan&nbsp;bij&nbsp;aangeven</a>&nbsp;|
-<a href="#13.3b">hoge&nbsp;bal&nbsp;bij&nbsp;aangeven</a>
+<a href="#13.7">straffen</a>&nbsp;:&nbsp;<a href="#strafcornertabel">tabel</a>&nbsp;|
+<a href="#13.3b">slagen&nbsp;toegestaan&nbsp;bij&nbsp;nemen</a>&nbsp;|
+<a href="#13.3b">hoge&nbsp;bal&nbsp;bij&nbsp;nemen</a>
 </td></tr><tr><td class="kruisverwijzing">
-<a href="#13.3k">hoge&nbsp;bal</a>&nbsp;|
-<a href="#2.3strafcorner">wisselen</a>&nbsp;-&nbsp;<a href="#13.6">wisselen</a>&nbsp;|
+<a href="#13.3k">hoog&nbsp;op&nbsp;doel</a>&nbsp;|
+<a href="#2.3strafcorner">niet&nbsp;wisselen</a>&nbsp;|
+<a href="#13.6">wel&nbsp;wisselen</a>&nbsp;|
 <a href="#9.14">stick&nbsp;wisselen</a>&nbsp;|
 <a href="#4.2strafcorner">masker</a>&nbsp;|
 <a href="#9.15strafcorner">los&nbsp;object</a>&nbsp;|
-<a href="#13.5">einde</a>&nbsp;-&nbsp;<a href="#13.6">einde</a>
+<a href="#13.5">einde</a>&nbsp;| 
+<a href="#13.6">einde&nbsp;uitspeelstrafcorner</a>
 </td></tr>
-<tr><td class="kruisverwijzing-titel">
+<tr><td rowspan="2" class="kruisverwijzing-titel">
 <a href="#12.4">strafbal</a>
 </td><td class="kruisverwijzing">
 <a href="#13.8">nemen</a>&nbsp;|
 <a href="#13.10">straffen</a>&nbsp;|
 <a href="#13.8j">slagen&nbsp;toegestaan</a>&nbsp;|
-<a href="#13.8j">hoge&nbsp;bal</a>&nbsp;|
+<a href="#13.8j">hoge&nbsp;bal</a>
+</td></tr>
+<tr><td class="kruisverwijzing">
 <a href="#9.14">stick&nbsp;wisselen</a>&nbsp;|
 <a href="#13.9">einde</a>&nbsp;|
 <a href="#6.6">hervatten</a>
@@ -1117,6 +1133,43 @@ goal wordt gescoord, dan wel een speler van dat team.</p>
 
 <div class="witruimte"></div>
 
+<table class="kruisverwijzing">
+<tr><th class="hoofdstuk">straf voor verdediger bij overtreding tegenover aanvaller</th></tr>
+</table>
+
+<table id="straffen">
+<tr><td rowspan="2">
+</td><td class="grijs" rowspan="2">geen opzet
+</td><td class="grijs" colspan="2">opzet
+</td><td class="grijs rechts" rowspan="2">doel&shy;punt voor&shy;komen
+</td></tr>
+
+<tr><td class="grijs">tegen speler <i>zonder</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
+</td><td class="grijs rechts">tegen speler <i>met</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
+</td></tr>
+
+<tr><td class="grijs"><a href="#cirkel">cirkel</a>
+</td><td class="geel"><a href="#12.3a">straf&shy;corner</a>
+</td><td class="geel"><a href="#12.3b">straf&shy;corner</a>
+</td><td class="rood"><a href="#12.4b">straf&shy;bal</a>
+</td><td class="rood rechts"><a href="#12.4a">straf&shy;bal</a>
+</td></tr>
+
+<tr><td class="grijs"><a href="#23metergebied">23 meter</a>
+</td><td class="groen"><a href="#12.2c">vrije slag</a>
+</td><td colspan="2" class="geel"><a href="#12.3c">straf&shy;corner</a>
+</td><td>
+</td></tr>
+
+<tr><td class="grijs">rest
+</td><td colspan="3" class="groen"><a href="#12.2a">vrije slag</a>
+</td><td>
+</td></tr>
+</table>
+
+
+<div class="witruimte"></div>
+
 <a class="ref" id="strafcornertabel"></a>
 <table class="kruisverwijzing">
 <tr><th class="hoofdstuk" colspan="2">straf bij overtreding tijdens strafcorner</th></tr>
@@ -1139,14 +1192,18 @@ opnieuw nemen
 
 <div class="witruimte"></div>
 
+<table class="kruisverwijzing">
+<tr><th class="hoofdstuk">slagen toegestaan</th></tr>
+</table>
+
 <table id="slagen">
-<tr><td>slagen<br />toegestaan
-</td><th><a href="#push">push</a>
-</th><th><a href="#slag">slag</a>
-</th><th><a href="#flick">flick</a>
-</th><th><a href="#scoop">scoop</a>
-</th><th>sleep
-</th></tr>
+<tr><td>
+</td><td class="grijs"><a href="#push">push</a>
+</td><td class="grijs"><a href="#slag">slag</a>
+</td><td class="grijs"><a href="#flick">flick</a>
+</td><td class="grijs"><a href="#scoop">scoop</a>
+</td><td class="grijs rechts">sleep
+</td></tr>
 
 <tr><td class="grijs links"><a href="#13.2d">vrije slag</a>
 </td><td class="groen">ja
