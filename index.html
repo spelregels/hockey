@@ -27,6 +27,10 @@ tr {
 	border-collapse	:collapse;
 }
 td { 
+	padding-top : 10px;
+	padding-bottom : 10px;
+	padding-left : 10px;
+	padding-right : 10px;
 	border : none; 
 	border-collapse	:collapse;
 }
@@ -71,54 +75,11 @@ th.hoofdstuk {
 	border-collapse	:collapse;
 }
 td.artikelnummer { 
-	padding-right : 10px; 
-	padding-left : 10px; 
-	padding-top : 10px; 
 	vertical-align : top;
 	font-weight : bold;
 	background-color : #EF790C;
-	border : none; 
-	border-collapse	:collapse;
 }
 td.artikel { 
-	padding-top : 10px; 
-	padding-bottom : 10px; 
-	padding-left : 10px; 
-	padding-right : 10px;
-	border : none; 
-	border-collapse	:collapse;
-}
-
-/* STIJLEN VOOR INDEX =================================== */
-
-table.kruisverwijzing {
-	background-color : #F8F8F8;
-	padding-left : 10px;
-	border : none;
-	border-collapse	:collapse;
-}
-td.kruisverwijzing-titel {
-	background-color : #EEEEEE;
-	padding-top : 10px;
-	padding-bottom : 10px;
-	padding-left : 10px;
-	padding-right : 10px;
-	border : none;
-	border-top : solid 5px #FFFFFF;
-	border-collapse	:collapse;
-	font-weight : bold; 
-	text-align : center;
-	width : 100px;
-}
-td.kruisverwijzing {
-	padding-left : 10px;
-	padding-right : 10px;
-	padding-top : 10px;
-	padding-bottom : 10px;
-	border : none;
-	border-top : solid 5px #FFFFFF;  
-	border-collapse	:collapse;
-	line-height : 175%;
 }
 .opmerking { 
 	font-style : italic; 
@@ -137,16 +98,14 @@ div.menu {
 	bottom : 0px;
 	font-size : 1.4rem;
 	background-color: #D6D6D6;
-	padding-left : 10px;
-	padding-right : 10px;
 }
 div.menu a {
 	text-decoration : none;
 }
-table.menu {
+#menu td {
 	height : 50px;
-	border : none;
-	border-collapse : collapse;
+	padding-top : 0px;
+	vertical-align : center;
 }
 
 /* STIJL VOOR WITRUIMTE TUSSEN HULPTABELLEN/INDEX ETC =================================== */
@@ -165,54 +124,42 @@ div.begrippen {
 /* STIJLEN VOOR HULPTABEL SLAGEN =================================== */
 
 #slagen td {
-	padding-top : 10px;
-	padding-bottom : 10px;
-	text-align : center;
-	height : 2rem;
 	width : 16%;
 }
 
 /* STIJLEN VOOR HULPTABEL STRAFFEN =================================== */
 
 #straffen td {
-	padding-top : 10px;
-	padding-bottom : 10px;
-	padding-left : 10px;
-	padding-right : 10px;
-	text-align : center;
-	height : 2rem;
 	width : 20%;
 }
 
 /* STIJLEN VOOR ALLE HULPTABELLEN =================================== */
 
+.cel, .celrechts {
+	text-align : center;
+	height : 2rem;
+	border-top : solid 4px #FFFFFF;
+	padding-left : 5px;
+	padding-right : 5px;
+}
+.cel {
+	border-right : solid 4px #FFFFFF; 
+}
 .rood {
 	background-color : #FF0000;
 	color : #FFFFFF;
-	border-top : solid 4px #FFFFFF; 
-	border-right : solid 4px #FFFFFF; 
 }
 .geel {
 	background-color : #FFBB00;
-	border-top : solid 4px #FFFFFF; 
-	border-right : solid 4px #FFFFFF; 
 }
 .groen {
 	background-color : #00FF00;
-	border-top : solid 4px #FFFFFF; 
-	border-right : solid 4px #FFFFFF; 
 }
-.grijs {
+.grijs, .index-onderwerp, .index-link-hoofd {
 	background-color : #DDDDDD;
-	font-weight : bold;
-	border-top : solid 4px #FFFFFF; 
-	border-right : solid 4px #FFFFFF; 
 }
-.grijs.rechts {
-	border-right : none;
-}
-.rood.rechts {
-	border-right : none;
+.index-link {
+	background-color : #F0F0F0;
 }
 
 </style>
@@ -1068,95 +1015,128 @@ goal wordt gescoord, dan wel een speler van dat team.</p>
 <div class="witruimte"></div>
 
 <a class="ref" id="index"></a>
-<table class="kruisverwijzing">
-<tr><th class="hoofdstuk" colspan="2">INDEX</th></tr>
-<tr><td class="kruisverwijzing-titel"><a href="#12.2">vrije slag</a> 
-</td><td class="kruisverwijzing">
+<table>
+<tr><th class="hoofdstuk" colspan="4">INDEX</th></tr>
+<tr><td class="index-onderwerp cel"><a href="#12.2">vrije slag</a> 
+</td><td class="index-link-hoofd cel">
+<a href="#12.2">toe&shy;kennen</a>
+</td><td class="index-link-hoofd cel">
 <a href="#13.2">nemen</a>
+</td><td>
 </td></tr>
-<tr><td rowspan="2" class="kruisverwijzing-titel">
-<a href="#12.3">strafcorner</a>
-</td><td class="kruisverwijzing">
-<a href="#13.3">nemen</a>&nbsp;|
-<a href="#13.7">straffen</a>&nbsp;:&nbsp;<a href="#strafcornertabel">tabel</a>
-</td></tr><tr><td class="kruisverwijzing">
-<a href="#13.3k">hoog&nbsp;op&nbsp;doel</a>&nbsp;|
-<a href="#2.3strafcorner">niet&nbsp;wisselen</a>&nbsp;|
-<a href="#13.6">wel&nbsp;wisselen</a>&nbsp;|
-<a href="#9.14">stick&nbsp;wisselen</a>&nbsp;|
-<a href="#4.2strafcorner">masker</a>&nbsp;|
-<a href="#9.15strafcorner">los&nbsp;object</a>&nbsp;|
-<a href="#13.5">einde</a>&nbsp;| 
-<a href="#13.6">einde&nbsp;uitspeelstrafcorner</a>
+
+<tr><td rowspan="4" class="index-onderwerp cel">
+<a href="#12.3">straf&shy;corner</a>
+</td><td class="index-link-hoofd cel">
+<a href="#12.3">toe&shy;kennen</a>
+</td><td class="index-link-hoofd cel">
+<a href="#13.3">nemen</a>
+</td><td class="index-link-hoofd celrechts">
+<a href="#13.7">straffen</a><br /><i><a href="#strafcornertabel">tabel</a></i>
+</td></tr><tr><td class="index-link cel">
+<a href="#13.3k">hoog op doel</a>
+</td><td class="index-link cel">
+<a href="#2.3strafcorner">niet wisselen</a>
+</td><td class="index-link celrechts">
+<a href="#13.6">wel wisselen</a>
+</td></tr><tr><td class="index-link cel">
+<a href="#9.14">stick wisselen</a>
+</td><td class="index-link cel">
+<a href="#4.2strafcorner">masker</a>
+</td><td class="index-link celrechts">
+<a href="#9.15strafcorner">los object</a>
+</td></tr><tr><td class="index-link cel">
+<a href="#13.5">einde</a>
+</td><td class="index-link cel">
+<a href="#13.6">einde uitspeel&shy;straf&shy;corner</a>
+</td><td>
 </td></tr>
-<tr><td rowspan="2" class="kruisverwijzing-titel">
-<a href="#12.4">strafbal</a>
-</td><td class="kruisverwijzing">
-<a href="#13.8">nemen</a>&nbsp;|
+
+<tr><td rowspan="2" class="index-onderwerp cel">
+<a href="#12.4">straf&shy;bal</a>
+</td><td class="index-link-hoofd cel">
+<a href="#12.4">toe&shy;kennen</a>
+</td><td class="index-link-hoofd cel">
+<a href="#13.8">nemen</a>
+</td><td class="index-link-hoofd celrechts">
 <a href="#13.10">straffen</a>
 </td></tr>
-<tr><td class="kruisverwijzing">
-<a href="#9.14">stick&nbsp;wisselen</a>&nbsp;|
-<a href="#13.9">einde</a>&nbsp;|
+<tr><td class="index-link cel">
+<a href="#9.14">stick wisselen</a>
+</td><td class="index-link cel">
+<a href="#13.9">einde</a>
+</td><td class="index-link celrechts">
 <a href="#6.6">hervatten</a>
 </td></tr>
-<tr><td class="kruisverwijzing-titel">
+
+<tr><td rowspan="2" class="index-onderwerp cel">
 <a href="#9.8">hoge bal</a>
-</td><td class="kruisverwijzing">
-<a href="#13.2e">bij&nbsp;vrije&nbsp;slag</a>&nbsp;| 
-<a href="#13.3b">bij&nbsp;nemen&nbsp;strafcorner</a>&nbsp;|
-<a href="#13.3k">tijdens&nbsp;strafcorner</a>&nbsp;|
-<a href="#13.8j">bij&nbsp;strafbal</a>&nbsp;|
+</td><td class="index-link cel">
+<a href="#13.2e">bij vrije slag</a>
+</td><td class="index-link cel">
+<a href="#13.3b">bij nemen straf&shy;corner</a>
+</td><td class="index-link celrechts">
+<a href="#13.3k">tijdens straf&shy;corner</a>
+</td></tr><tr><td class="index-link cel">
+<a href="#13.8j">bij strafbal</a>
+</td><td class="index-link cel">
 <a href="#9.6">stoppen</a>
+</td><td>
 </td></tr>
-<tr><td class="kruisverwijzing-titel">
-<a href="#slagentoegestaan">slagen toegestaan</a>
-</td><td class="kruisverwijzing">
-<a href="#13.2d">bij&nbsp;vrije&nbsp;slag</a>&nbsp;| 
-<a href="#13.3b">bij&nbsp;nemen&nbsp;strafcorner</a>&nbsp;|
-<a href="#13.8j">bij&nbsp;strafbal</a>
+
+<tr><td class="index-onderwerp cel">
+<a href="#slagentoegestaan">slagen toe&shy;gestaan</a>
+</td><td class="index-link cel">
+<a href="#13.2d">bij vrije slag</a>
+</td><td class="index-link cel">
+<a href="#13.3b">bij nemen straf&shy;corner</a>
+</td><td class="index-link celrechts">
+<a href="#13.8j">bij straf&shy;bal</a>
 </td></tr>
-<tr><td class="kruisverwijzing-titel">
-<a href="#wisselen">wisselen</a>
-</td><td class="kruisverwijzing">
-<a href="#2.3strafcorner">tijdens&nbsp;strafcorner</a>&nbsp;-
-<a href="#13.6">tijdens&nbsp;strafcorner</a>&nbsp;|
-<a href="#9.14">stick&nbsp;wisselen</a>
+
+<tr><td class="index-onderwerp cel">
+<a href="#wisselen">wissel&shy;en</a>
+</td><td class="index-link cel">
+<a href="#2.3strafcorner">tijdens straf&shy;corner</a>
+</td><td class="index-link cel">
+<a href="#13.6">tijdens straf&shy;corner</a>
+</td><td class="index-link celrechts">
+<a href="#9.14">stick wissel&shy;en</a>
 </td></tr>
 </table>
 
 <div class="witruimte"></div>
 
-<table class="kruisverwijzing">
+<table>
 <tr><th class="hoofdstuk">straf voor verdediger bij overtreding tegenover aanvaller</th></tr>
 </table>
 
 <table id="straffen">
 <tr><td rowspan="2">
-</td><td class="grijs" rowspan="2">geen opzet
-</td><td class="grijs" colspan="2">opzet
-</td><td class="grijs rechts" rowspan="2">doel&shy;punt voor&shy;komen
+</td><td class="grijs cel" rowspan="2">geen opzet
+</td><td class="grijs cel" colspan="2">opzet
+</td><td class="grijs celrechts" rowspan="2">doel&shy;punt voor&shy;komen
 </td></tr>
 
-<tr><td class="grijs">tegen speler <i>zonder</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
-</td><td class="grijs rechts">tegen speler <i>met</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
+<tr><td class="grijs cel">tegen speler <i>zonder</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
+</td><td class="grijs celrechts">tegen speler <i>met</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
 </td></tr>
 
-<tr><td class="grijs"><a href="#cirkel">cirkel</a>
-</td><td class="geel"><a href="#12.3a">straf&shy;corner</a>
-</td><td class="geel"><a href="#12.3b">straf&shy;corner</a>
-</td><td class="rood"><a href="#12.4b">straf&shy;bal</a>
-</td><td class="rood rechts"><a href="#12.4a">straf&shy;bal</a>
+<tr><td class="grijs cel"><a href="#cirkel">cirkel</a>
+</td><td class="geel cel"><a href="#12.3a">straf&shy;corner</a>
+</td><td class="geel cel"><a href="#12.3b">straf&shy;corner</a>
+</td><td class="rood cel"><a href="#12.4b">straf&shy;bal</a>
+</td><td class="rood celrechts"><a href="#12.4a">straf&shy;bal</a>
 </td></tr>
 
-<tr><td class="grijs"><a href="#23metergebied">23 meter</a>
-</td><td class="groen"><a href="#12.2c">vrije slag</a>
-</td><td colspan="2" class="geel"><a href="#12.3c">straf&shy;corner</a>
+<tr><td class="grijs cel"><a href="#23metergebied">23 meter</a>
+</td><td class="groen cel"><a href="#12.2c">vrije slag</a>
+</td><td colspan="2" class="geel cel"><a href="#12.3c">straf&shy;corner</a>
 </td><td>
 </td></tr>
 
-<tr><td class="grijs">rest
-</td><td colspan="3" class="groen"><a href="#12.2a">vrije slag</a>
+<tr><td class="grijs cel">rest
+</td><td colspan="3" class="groen cel"><a href="#12.2a">vrije slag</a>
 </td><td>
 </td></tr>
 </table>
@@ -1165,19 +1145,19 @@ goal wordt gescoord, dan wel een speler van dat team.</p>
 <div class="witruimte"></div>
 
 <a class="ref" id="strafcornertabel"></a>
-<table class="kruisverwijzing">
+<table>
 <tr><th class="hoofdstuk" colspan="2">straf bij overtreding tijdens strafcorner</th></tr>
-<tr><td class="kruisverwijzing-titel">
+<tr><td class="grijs cel">
 opnieuw nemen
-</td><td class="kruisverwijzing">
+</td><td>
 <ul><li><a href="#13.7a">aangever niet met &eacute;&eacute;n voet buiten het veld</a>
 </li><li><a href="#13.7c2">verdediger te vroeg over middenlijn</a>
 </li></ul>
 </td>
-<tr><td class="kruisverwijzing-titel">
+<tr><td class="grijs cel">
 speler achter middenlijn +<br />
 opnieuw nemen
-</td><td class="kruisverwijzing">
+</td><td>
 <ul><li><a href="#13.7b">schijnbeweging aangever</a>
 </li><li>te vroeg in cirkel: <a href="#13.7c">verdediger</a>, <a href="#13.7d">doelverdediger</a> of <a href="#13.7e">aanvaller</a>
 </li></ul>
@@ -1187,41 +1167,41 @@ opnieuw nemen
 <div class="witruimte"></div>
 
 <a class="ref" id="slagentoegestaan"></a>
-<table class="kruisverwijzing">
+<table>
 <tr><th class="hoofdstuk">slagen toegestaan</th></tr>
 </table>
 
 <table id="slagen">
 <tr><td>
-</td><td class="grijs"><a href="#push">push</a>
-</td><td class="grijs"><a href="#slag">slag</a>
-</td><td class="grijs"><a href="#flick">flick</a>
-</td><td class="grijs"><a href="#scoop">scoop</a>
-</td><td class="grijs rechts">sleep
+</td><td class="grijs cel"><a href="#push">push</a>
+</td><td class="grijs cel"><a href="#slag">slag</a>
+</td><td class="grijs cel"><a href="#flick">flick</a>
+</td><td class="grijs cel"><a href="#scoop">scoop</a>
+</td><td class="grijs celrechts">sleep
 </td></tr>
 
-<tr><td class="grijs links"><a href="#13.2d">vrije slag</a>
-</td><td class="groen">ja
-</td><td class="geel"><a href="#13.2e">niet hoog</a>
-</td><td class="groen">ja
-</td><td class="groen">ja
-</td><td class="grijs rechts">?
+<tr><td class="grijs cel"><a href="#13.2d">vrije slag</a>
+</td><td class="groen cel">ja
+</td><td class="geel cel"><a href="#13.2e">niet hoog</a>
+</td><td class="groen cel">ja
+</td><td class="groen cel">ja
+</td><td class="grijs celrechts">?
 </td></tr>
 
-<tr><td class="grijs links"><a href="#13.3b">aangeven<br />strafcorner</a>
-</td><td class="geel"><a href="#13.3b">niet hoog</a>
-</td><td class="geel"><a href="#13.3b">niet hoog</a>
-</td><td class="rood">nee
-</td><td class="rood">nee
-</td><td class="grijs rechts">?
+<tr><td class="grijs cel"><a href="#13.3b">aange&shy;ven<br />straf&shy;cor&shy;ner</a>
+</td><td class="geel cel"><a href="#13.3b">niet hoog</a>
+</td><td class="geel cel"><a href="#13.3b">niet hoog</a>
+</td><td class="rood cel">nee
+</td><td class="rood cel">nee
+</td><td class="grijs celrechts">?
 </td></tr>
 
-<tr><td class="grijs links"><a href="#13.8j">strafbal</a>
-</td><td class="groen">ja
-</td><td class="rood">nee
-</td><td class="groen">ja
-</td><td class="groen">ja
-</td><td class="rood rechts"><a href="#strafbalslepen">nee</a>
+<tr><td class="grijs cel"><a href="#13.8j">straf&shy;bal</a>
+</td><td class="groen cel">ja
+</td><td class="rood cel">nee
+</td><td class="groen cel">ja
+</td><td class="groen cel">ja
+</td><td class="rood celrechts"><a href="#strafbalslepen">nee</a>
 </td></tr>
 
 </table>
@@ -1230,7 +1210,7 @@ opnieuw nemen
 
 
 <div class="menu">
-<table class="menu"><tr><td>
+<table id="menu"><tr><td>
 <a href="#index">INDEX</a>
 <a href="#1">1</a>
 <a href="#2">2</a>
