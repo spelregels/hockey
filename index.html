@@ -161,7 +161,8 @@ DIV.tegel {
 }
 
 /* tegelvullende tabel in bovenstaande DIV die verticale centrering binnen de
-   tegel mogelijk maakt */
+   tegel mogelijk maakt, en die bovendien de hyperlink in zich heeft waardoor
+   de hele 'tegel' aanklikbaar is in plaats van alleen de tekst   */
 TABLE.tegeltabel {
 	width : 100%;
 	height : 100%;
@@ -169,6 +170,10 @@ TABLE.tegeltabel {
 TD.tegeltabelcel {
 	padding : 0px;
 	vertical-align : middle;
+	font-weight : bold;
+}
+TD.tegeltabelcel A {
+	text-decoration : none;
 }
 	
 /* STIJLEN VOOR ALLE HULPTABELLEN =================================== */
@@ -1056,67 +1061,67 @@ goal wordt gescoord, dan wel een speler van dat team.</p>
 <table>
 <tr><th class="hoofdstuk" colspan="2">INDEX</th></tr>
 <tr><td class="kolom-onderwerp">
-<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#12.2">vrije slag</a></td></tr></table></div>
+<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td onClick="location.href='#12.2'" class="tegeltabelcel"><a href="#12.2">vrije slag</a></td></tr></table></div>
 </td><td class="leeg">
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#12.2">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.2">nemen</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#12.2'" class="tegeltabelcel"><a href="#12.2">toe&shy;kennen</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#13.2'" class="tegeltabelcel"><a href="#13.2">nemen</a></td></tr></table></div>
 </td></tr>
 
 <tr><td class="kolom-onderwerp">
-<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#12.3">straf&shy;corner</a></td></tr></table></div>
+<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td onClick="location.href='#12.3'" class="tegeltabelcel"><a href="#12.3">straf&shy;corner</a></td></tr></table></div>
 </td><td class="leeg">
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#12.3">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.3">nemen</a></td></tr></table></div>
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.7">straffen</a><br /><i><a href="#strafcornertabel">tabel</a></i></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.3k">hoog op doel</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#2.3strafcorner">niet wisselen</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.6">wel wisselen</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#9.14">stick wisselen</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#4.2strafcorner">masker</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#9.15strafcorner">los object</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.5">einde</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#12.3'" class="tegeltabelcel"><a href="#12.3">toe&shy;kennen</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#13.3'" class="tegeltabelcel"><a href="#13.3">nemen</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#13.7'" class="tegeltabelcel"><a href="#13.7">straffen</a><br /><i><a href="#strafcornertabel">tabel</a></i></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.3'" class="tegeltabelcel"><a href="#13.3k">hoog op doel</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#2.3'" class="tegeltabelcel"><a href="#2.3strafcorner">niet wisselen</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.6'" class="tegeltabelcel"><a href="#13.6">wel wisselen</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#9.14'" class="tegeltabelcel"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#4.2'" class="tegeltabelcel"><a href="#4.2strafcorner">masker</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#9.15'" class="tegeltabelcel"><a href="#9.15strafcorner">los object</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.5'" class="tegeltabelcel"><a href="#13.5">einde</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.6'" class="tegeltabelcel"><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></td></tr></table></div>
 </td></tr>
 
 <tr><td class="kolom-onderwerp">
-<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#12.4">straf&shy;bal</a></td></tr></table></div>
+<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td onClick="location.href='#12.4'" class="tegeltabelcel"><a href="#12.4">straf&shy;bal</a></td></tr></table></div>
 </td><td class="leeg">
 
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#12.4">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.8">nemen</a></td></tr></table></div>
-<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.10">straffen</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#9.14">stick wisselen</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.9">einde</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#6.6">hervatten</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#12.4'" class="tegeltabelcel"><a href="#12.4">toe&shy;kennen</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#13.8'" class="tegeltabelcel"><a href="#13.8">nemen</a></td></tr></table></div>
+<div class="tegel cel index-link-hoofd"><table class="tegeltabel"><tr><td onClick="location.href='#13.10'" class="tegeltabelcel"><a href="#13.10">straffen</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#9.14'" class="tegeltabelcel"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.9'" class="tegeltabelcel"><a href="#13.9">einde</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#6.6'" class="tegeltabelcel"><a href="#6.6">hervatten</a></td></tr></table></div>
 </td></tr>
 
 <tr><td class="kolom-onderwerp">
-<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#9.8">hoge bal</a></td></tr></table></div>
+<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td onClick="location.href='#9.8'" class="tegeltabelcel"><a href="#9.8">hoge bal</a></td></tr></table></div>
 </td><td class="leeg">
 
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.2e">bij vrije slag</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.3k">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.8j">bij strafbal</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#9.6">stoppen</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.2e'" class="tegeltabelcel"><a href="#13.2e">bij vrije slag</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.3b'" class="tegeltabelcel"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.3k'" class="tegeltabelcel"><a href="#13.3k">tijdens straf&shy;corner</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.8j'" class="tegeltabelcel"><a href="#13.8j">bij strafbal</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#9.6'" class="tegeltabelcel"><a href="#9.6">stoppen</a></td></tr></table></div>
 </td></tr>
 
 <tr><td class="kolom-onderwerp">
-<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#slagentoegestaan">slagen toe&shy;gestaan</a></td></tr></table></div>
+<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td onClick="location.href='#slagentoegestaan'" class="tegeltabelcel"><a href="#slagentoegestaan">slagen toe&shy;gestaan</a></td></tr></table></div>
 </td><td class="leeg">
 
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.2d">bij vrije slag</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.8j">bij straf&shy;bal</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.2d'" class="tegeltabelcel"><a href="#13.2d">bij vrije slag</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.3b'" class="tegeltabelcel"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.8j'" class="tegeltabelcel"><a href="#13.8j">bij straf&shy;bal</a></td></tr></table></div>
 </td></tr>
 
 <tr><td class="kolom-onderwerp">
-<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#wisselen">wissel&shy;en</a></td></tr></table></div>
+<div class="tegel cel index-onderwerp"><table class="tegeltabel"><tr><td onClick="location.href='#wisselen'" class="tegeltabelcel"><a href="#wisselen">wissel&shy;en</a></td></tr></table></div>
 </td><td class="leeg">
 
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#2.3strafcorner">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel cel index-link"><table class="tegeltabel"><tr><td class="tegeltabelcel"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#2.3strafcorner'" class="tegeltabelcel"><a href="#2.3strafcorner">tijdens straf&shy;corner</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#13.6'" class="tegeltabelcel"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
+<div class="tegel cel index-link"><table class="tegeltabel"><tr><td onClick="location.href='#9.14'" class="tegeltabelcel"><a href="#9.14">stick wisselen</a></td></tr></table></div>
 </td></tr>
 </table>
 
