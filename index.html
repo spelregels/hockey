@@ -183,6 +183,17 @@ TD.tegeltabelcel A {
    boven en links een rand (cel-l). Aan 1 kant is een cel nodig met
    alleen boven een rand (cel). */
    
+/* NB: de index-tegels moeten de rand links hebben, zodat een tegel pas
+   naar de volgende regel wordt gezet als hij werkelijk niet past,
+   en niet al wanneer een witte rechter rand niet past */
+   
+/* NB: in de straffen-voor-verdediger tabel werkt gaat het niet goed als
+   de linker randen wit zijn in plaats van rechts. De tabel wordt te breed
+   en er verschijnt een horizontale scrollbar. Het gaat fout door de 
+   rechter cel die over twee rijen samengevoegd is. Hierdoor is het niet
+   mogelijk om in alle gevallen uit te gaan van cellen die de witte rand
+   links hebben, zoals op de index-tegels vereist is */
+   
 .cel, .cel-l, .cel-r {
 	text-align : center;
 	height : 4rem;
