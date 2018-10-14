@@ -148,12 +148,14 @@ DIV.begrippen A:HOVER {
 
 /* STIJLEN VOOR INDEX ====================================== */
 
-/* tegel dmv floating DIV zodat tegels over regels verdeeld kunnen worden
-   naar gelang de breedte van het scherm */
+/* Tegel dmv floating DIV zodat tegels over regels verdeeld kunnen worden
+   naar gelang de breedte van het scherm. Standaard kleur kan overschreven 
+   worden met stijlen verderop */
 DIV.tegel {
 	width : 20.3vw;
 	max-width : 6em;
 	float : left;
+	background-color : #F9F9F9;
 }
 /* tegelvullende tabel in bovenstaande DIV tbv verticale centrering tekst */
 DIV.tegel TABLE {
@@ -205,17 +207,14 @@ DIV.max-breedte {
 	background-color : #FF0000;
 	color : #FFFFFF;
 }
-.geel, .index-onderwerp {
+.geel, DIV.tegel.index-onderwerp {
 	background-color : #FFBB00;
 }
 .groen {
 	background-color : #00FF00;
 }
-.grijs, .index-link-hoofd {
+.grijs, DIV.tegel.index-link-hoofd {
 	background-color : #EEEEEE;
-}
-.index-link {
-	background-color : #F9F9F9;
 }
 </style>
 </head>
@@ -1041,39 +1040,39 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.3'"><a href="#12.3">toe&shy;kennen</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.3'"><a href="#13.3">nemen</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td><a href="#13.7">straffen</a><br /><br /><i><a href="#strafcornertabel">tabel</a></i></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">hoog op doel</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">niet wisselen</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">wel wisselen</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#4.2strafcorner'"><a href="#4.2strafcorner">masker</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#9.15strafcorner'"><a href="#9.15strafcorner">los object</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.5'"><a href="#13.5">einde</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">hoog op doel</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">niet wisselen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">wel wisselen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#4.2strafcorner'"><a href="#4.2strafcorner">masker</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#9.15strafcorner'"><a href="#9.15strafcorner">los object</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.5'"><a href="#13.5">einde</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></td></tr></table></div>
 
 <div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#12.4'"><a href="#12.4">straf&shy;bal</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.4'"><a href="#12.4">toe&shy;kennen</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.8'"><a href="#13.8">nemen</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.10'"><a href="#13.10">straffen</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.9'"><a href="#13.9">einde</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#6.6'"><a href="#6.6">hervatten</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.9'"><a href="#13.9">einde</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#6.6'"><a href="#6.6">hervatten</a></td></tr></table></div>
 
 <div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#9.8'"><a href="#9.8">hoge bal (9.8)</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#9.6'"><a href="#9.6">hoge bal (9.6)</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.2e'"><a href="#13.2e">bij vrije slag</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij strafbal</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#9.6'"><a href="#9.6">hoge bal (9.6)</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.2e'"><a href="#13.2e">bij vrije slag</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">tijdens straf&shy;corner</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij strafbal</a></td></tr></table></div>
 
 <div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#slagentoegestaan'"><a href="#slagentoegestaan">slagen toe&shy;gestaan</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.2d'"><a href="#13.2d">bij vrije slag</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij straf&shy;bal</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.2d'"><a href="#13.2d">bij vrije slag</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij straf&shy;bal</a></td></tr></table></div>
 
 <div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#wisselen'"><a href="#wisselen">wissel&shy;en</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel index-link"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">tijdens straf&shy;corner</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
 
 
 <div class="witruimte"></div>
