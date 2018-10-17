@@ -48,7 +48,7 @@ A {
 	font-weight : bold;
 	color : inherit;
 }
-A:HOVER { 
+A:HOVER, DIV.tegel:HOVER { 
 	color : #EF790C;
 }
 OL { 
@@ -69,6 +69,9 @@ LI {
 
 /* STIJLEN VOOR SPELREGELS =================================== */
 
+TABLE.spelregels {
+	margin-bottom : 5px;
+}
 .spelregels TH { 
 	text-align : left;
 	vertical-align : top;
@@ -125,6 +128,11 @@ DIV.witruimte {
 	clear : both;
 }
 
+DIV.rand {
+	height : 5px;
+	clear : both;
+}
+
 /* STIJL VOOR BEGRIPPENLIIJST =================================== */
 
 DIV.begrippen {
@@ -170,6 +178,9 @@ DIV.tegel TD {
 	padding : 0px;
 	vertical-align : middle;
 }
+DIV.tegel:HOVER {
+	background-color : #99EEFF;
+}
 /* op de tegel hyperlinks niet onderstrepen en niet vet */
 DIV.tegel A {
 	text-decoration : none;
@@ -194,11 +205,11 @@ DIV.index-onderwerp {
 .cel, .cel-r, DIV.tegel {
 	text-align : center;
 	height : 4rem;
-	border-top : solid 5px white; 
+	border-top : solid 5px white;
 	padding : 5px;
 }
 .cel-r, DIV.tegel {
-	border-right : solid 5px #FFFFFF; 
+	border-right : solid 5px #FFFFFF;
 }
 
 /* STIJLEN VOOR ALLE HULPTABELLEN =================================== */
@@ -211,13 +222,13 @@ DIV.max-breedte {
 	background-color : #FF0000;
 	color : #FFFFFF;
 }
-.geel, DIV.tegel.index-onderwerp {
+.geel, DIV.index-onderwerp {
 	background-color : #FFBB00;
 }
 .groen {
 	background-color : #00FF00;
 }
-.grijs, DIV.tegel.index-link-hoofd {
+.grijs, DIV.index-link-hoofd {
 	background-color : #EEEEEE;
 }
 </style>
@@ -271,8 +282,6 @@ Doelen staan buiten het speelveld in het midden van elke <a href="#achterlijn">a
 <div class="opmerking">KNHB: op kunstgrasvelden en bij bondswedstrijden van standaardteams moet rond het speelveld een vaste omheining staan, op minimaal 2 meter van een zijlijn en minimaal 4 meter van een achterlijn. Tevens moeten bij het speelveld twee teambanken staan, &eacute;&eacute;n voor elk van de teams, plaats biedende aan 9 personen. Zij moeten worden geplaatst aan &eacute;&eacute;n zijde van het speelveld, op minimaal 1 meter buiten de zijlijn en maximaal 10 meter ter weerszijden van de middenlijn.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="2"></a>
 <table class="spelregels">
@@ -345,8 +354,6 @@ KNHB: bij een ongeluk of ander bijzonder voorval kunnen de scheidsrechters de we
 </td></tr>
 </table>
 
-<br />
-
 <a id="3"></a>
 <table class="spelregels"><thead><tr><th>3</th><th>Aanvoerders</th></tr></thead>
 
@@ -369,8 +376,6 @@ Een <a href="#14">persoonlijke straf</a> wordt toegekend aan een aanvoerder die 
 <div class="opmerking">KNHB: aanvoerders dragen namens hun vereniging ook verantwoordelijkheid voor de correcte invulling en afhandeling van het wedstrijdformulier.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="4"></a>
 <table class="spelregels">
@@ -434,8 +439,6 @@ De bal is hard, wit (of een andere overeengekomen kleur die afwijkt van de onder
 </td></tr>
 </table>
 
-<br />
-
 <a id="5"></a>
 <table class="spelregels">
 <thead><tr><th>5</th><th>Wedstrijd en resultaat</th></tr></thead>
@@ -454,8 +457,6 @@ Het team dat de meeste doelpunten heeft gescoord, is de winnaar van de wedstrijd
 <div class="opmerking">KNHB: bepalingen over een shootoutserie als manieren om tot een beslissing te komen in een wedstrijd die met een gelijkspel is ge&euml;indigd, staan in het bondsreglement.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="6"></a>
 <table class="spelregels">
@@ -504,8 +505,6 @@ Als een strafbal is genomen en daaruit geen doelpunt is gescoord, wordt het spel
 </td></tr>
 </table>
 
-<br />
-
 <a id="7"></a>
 <table class="spelregels">
 <thead><tr><th>7</th><th>Bal buiten het speelveld</th></tr></thead>
@@ -532,8 +531,6 @@ Wanneer de bal over de achterlijn is gegaan zonder dat een doelpunt is gescoord,
 </td></tr>
 </table>
 
-<br />
-
 <a id="8"></a>
 <table class="spelregels">
 <thead><tr><th>8</th><th>Scoren van doelpunten</th></tr></thead>
@@ -543,8 +540,6 @@ Een doelpunt wordt gescoord wanneer de bal, nadat hij binnen de cirkel door een 
 <div class="opmerking">Spelen van de bal door een verdediger voor of nadat die door een aanvaller in de cirkel is geraakt, is hierop niet van invloed.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="9"></a>
 <table class="spelregels">
@@ -642,7 +637,6 @@ Spelers mogen geen voorwerpen of uitrustingsstukken op het veld, naar de bal of 
 Spelers mogen het spel niet vertragen om daardoor voordeel te behalen (tijdrekken).
 </td></tr>
 </table>
-<br />
 
 <a id="10"></a>
 <table class="spelregels">
@@ -677,8 +671,6 @@ Wanneer de bal buiten hun cirkel is, mogen doelverdedigers en veldspelers met de
 <div class="opmerking">Een veldspeler met de rechten van een doelverdediger wordt als veldspeler beschouwd als hij buiten zijn cirkel verdedigt.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="11"></a>
 <table class="spelregels"><thead><tr><th>11</th><th>Spelregels: scheidsrechters</th></tr></thead>
@@ -728,8 +720,6 @@ Wanneer de bal een scheidsrechter, een niet-bevoegd persoon of enig los voorwerp
 </td></tr>
 </table>
 
-<br />
-
 <a id="12"></a>
 <table class="spelregels"><thead><tr><th>12</th><th>Straffen</th></tr></thead>
 
@@ -771,8 +761,6 @@ Als er sprake is van een nieuwe overtreding of van wangedrag nog voor een opgele
 </li></ol>
 </td></tr>
 </table>
-
-<br />
 
 <a id="13"></a>
 <table class="spelregels"><thead><tr><th>13</th><th>Uitvoering van straffen</th></tr></thead>
@@ -921,8 +909,6 @@ Straffen voor een overtreding tijdens het nemen van een strafbal:
 </li></ol>
 </table>
 
-<br />
-
 <a id="14"></a>
 <table class="spelregels"><thead><tr><th>14</th><th>Persoonlijke straffen</th></tr></thead>
 
@@ -978,7 +964,9 @@ KNHB: persoonlijke straffen voor teambegeleiders.
 
 <div class="begrippen">
 <a id="begrippenlijst"></a>
+<table>
 <h1>Termen en begrippen</h1>
+</table>
 
 <p><a id="23metergebied">23-metergebied</a> Het gebied dat wordt begrensd door de lijn op 22,90 meter van elke achterlijn en de aansluitende delen van de zijlijnen en achterlijn, de lijnen zelf meegerekend.</p>
 
@@ -1032,17 +1020,36 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 
 <div class="witruimte"></div>
 
+<a id="inhoud"></a>
+<table>
+<thead><tr><th>INHOUD</th></tr></thead>
+</table>
+<div class="tegel"><table><tr><td onClick="location.href='#1'"><a href="#1">speelveld</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#2'"><a href="#2">samen&shy;stelling teams</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#3'"><a href="#3">aan&shy;voerders</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#4'"><a href="#4">kleding en uit&shy;rusting</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#5'"><a href="#5">wedstrijd en resultaat</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#6'"><a href="#6">begin en her&shy;vatting</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#7'"><a href="#7">bal buiten speelveld</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#8'"><a href="#8">scoren van doel&shy;punten</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#9'"><a href="#9">alle spelers</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#10'"><a href="#10">doel&shy;verde&shy;digers</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#11'"><a href="#11">scheids&shy;rechters</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#12'"><a href="#12">straffen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#13'"><a href="#13">uit&shy;voering straffen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#14'"><a href="#14">persoon&shy;lijke straffen</a></td></tr></table></div>
+
+<div class="rand"></div>
+	
 <a id="index"></a>
 <table>
 <thead><tr><th>INDEX</th></tr></thead>
 </table>
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#12.2'"><a href="#12.2">vrije slag</a></td></tr></table></div>
+<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#13.2'"><a href="#13.2">vrije slag</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.2'"><a href="#12.2">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.2'"><a href="#13.2">nemen</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#12.3'"><a href="#12.3">straf&shy;corner</a></td></tr></table></div>
+<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#13.3'"><a href="#13.3">straf&shy;corner</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.3'"><a href="#12.3">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.3'"><a href="#13.3">nemen</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td><a href="#13.7">straffen</a><br /><br /><i><a href="#strafcornertabel">tabel</a></i></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">hoog op doel</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">niet wisselen</a></td></tr></table></div>
@@ -1053,9 +1060,8 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <div class="tegel"><table><tr><td onClick="location.href='#13.5'"><a href="#13.5">einde</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#12.4'"><a href="#12.4">straf&shy;bal</a></td></tr></table></div>
+<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#13.8'"><a href="#13.8">straf&shy;bal</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.4'"><a href="#12.4">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.8'"><a href="#13.8">nemen</a></td></tr></table></div>
 <div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.10'"><a href="#13.10">straffen</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#13.9'"><a href="#13.9">einde</a></td></tr></table></div>
@@ -1078,8 +1084,7 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
 
-
-<div class="witruimte"></div>
+<div class="rand"></div>
 
 <table><thead><tr><th>straf voor verdediger bij overtreding</th></tr></thead></table>
 <div class="max-breedte">
@@ -1114,7 +1119,7 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 </table>
 </div>
 
-<br />
+<div class="rand"></div>
 
 <a id="strafcornertabel"></a>
 <table><thead><tr><th>straf bij overtreding tijdens strafcorner</th></tr></thead></table>
@@ -1143,7 +1148,7 @@ vrije slag verdediging
 </table>
 </div>
 
-<br />
+<div class="rand"></div>
 
 <a id="slagentoegestaan"></a>
 <table><thead><tr><th>slagen toegestaan</th></tr></thead></table>
@@ -1188,6 +1193,7 @@ vrije slag verdediging
 
 <div id="menu">
 <table><tr><td>
+<a href="#inhoud">INHOUD</a>
 <a href="#index">INDEX</a>
 <a href="#1" title="Speelveld">1</a>
 <a href="#2" title="Samenstelling van teams">2</a>
