@@ -164,19 +164,22 @@ DIV.begrippen A:HOVER {
    naar gelang de breedte van het scherm. Standaard kleur kan overschreven 
    worden met stijlen verderop */
 DIV.tegel {
-	width : 20.3vw;
-	max-width : 6em;
+	width : 22.7vw;
+	max-width : 7em;
+	height : 75px;
 	float : left;
 	background-color : #F9F9F9;
+	text-align : center;
+	margin-top : 5px;
+	margin-right : 5px;
 }
 /* tegelvullende tabel in bovenstaande DIV tbv verticale centrering tekst */
 DIV.tegel TABLE {
 	height : 100%;
 }
-/* geen padding want die heeft de DIV al via de cel-stijl */
 DIV.tegel TD {
-	padding : 0px;
 	vertical-align : middle;
+	padding : 5px;
 }
 DIV.tegel:HOVER {
 	background-color : #99EEFF;
@@ -185,6 +188,9 @@ DIV.tegel:HOVER {
 DIV.tegel A {
 	text-decoration : none;
 	font-weight : normal;
+}
+DIV.tegel A:HOVER {
+	color : #9F2900;
 }
 /* stijl die de tegel aan het begin van een nieuwe regel plaatst */
 DIV.index-onderwerp {
@@ -202,13 +208,13 @@ DIV.index-onderwerp {
    en er verschijnt een horizontale scrollbar. Het gaat fout door de 
    rechter cel die over twee rijen samengevoegd is. */
    
-.cel, .cel-r, DIV.tegel {
+.cel, .cel-r {
 	text-align : center;
-	height : 4rem;
+	height : 65px;
 	border-top : solid 5px white;
 	padding : 5px;
 }
-.cel-r, DIV.tegel {
+.cel-r {
 	border-right : solid 5px #FFFFFF;
 }
 
@@ -1038,6 +1044,7 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <div class="tegel"><table><tr><td onClick="location.href='#12'"><a href="#12">straffen</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#13'"><a href="#13">uit&shy;voering straffen</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#14'"><a href="#14">persoon&shy;lijke straffen</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#begrippenlijst'"><a href="#begrippenlijst">termen en begrip&shy;pen</a></td></tr></table></div>
 
 <div class="rand"></div>
 	
@@ -1067,8 +1074,8 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <div class="tegel"><table><tr><td onClick="location.href='#13.9'"><a href="#13.9">einde</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#6.6'"><a href="#6.6">hervatten</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#9.8'"><a href="#9.8">hoge bal (9.8)</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#9.6'"><a href="#9.6">hoge bal (9.6)</a></td></tr></table></div>
+<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#9.8'"><a href="#9.8">hoge bal<br />(9.8)</a></td></tr></table></div>
+<div class="tegel"><table><tr><td onClick="location.href='#9.6'"><a href="#9.6">hoge bal<br />(9.6)</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#13.2e'"><a href="#13.2e">bij vrije slag</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">tijdens straf&shy;corner</a></td></tr></table></div>
@@ -1084,7 +1091,7 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
 <div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
 
-<div class="rand"></div>
+<div class="witruimte"></div>
 
 <table><thead><tr><th>straf voor verdediger bij overtreding</th></tr></thead></table>
 <div class="max-breedte">
