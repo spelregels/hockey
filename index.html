@@ -147,8 +147,10 @@ DIV.begrippen A:HOVER {
 /* STIJLEN VOOR SPELREGELTABELLEN =================================== */
 
 TABLE.spelregeltabel {
-	table-layout : fixed;
 	max-width : 750px;
+}
+TABLE.gelijke-kolommen {
+	table-layout : fixed;
 }
 .spelregeltabel TD {
 	text-align : center;
@@ -1088,7 +1090,7 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <div class="witruimte"></div>
 
 <table><thead><tr><th>straf voor verdediger bij overtreding</th></tr></thead></table>
-<table class="spelregeltabel">
+<table class="spelregeltabel gelijke-kolommen">
 <tr><td class="normaal" rowspan="2">
 </td><td rowspan="2">geen opzet
 </td><td colspan="2">opzet
@@ -1149,7 +1151,7 @@ vrije slag verdediging
 
 <a id="slagentoegestaan"></a>
 <table><thead><tr><th>slagen toegestaan</th></tr></thead></table>
-<table class="spelregeltabel">
+<table class="spelregeltabel gelijke-kolommen">
 <tr><td class="normaal">
 </td><td><a href="#push">push</a>
 </td><td><a href="#slag">slag</a>
