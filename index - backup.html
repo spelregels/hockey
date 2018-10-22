@@ -4,18 +4,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<meta charset="UTF-8">
 	<title>KNHB Spelregels Hockey</title>
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 	<link rel="icon" type="image/png" href="https://spelregels.github.io/hockey/appicon.png">
 <style>
-HTML {
-	margin : 0px;
-}
 BODY {  
-	font-family:Segoe UI;
-	margin : 0px;
-	/* padding zodat onderste deel van de pagina niet onder het
-	   menu blijft staan */
-	padding-bottom : 50px;
+	font-family: 'Segoe UI', Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+	/* marge zodat onderste deel van de pagina niet onder het menu blijft staan */
+	margin : 0 0 50px 0;
+	min-width : 370px;
 }
 TABLE { 
 	border : none; 
@@ -48,7 +43,7 @@ A {
 	font-weight : bold;
 	color : inherit;
 }
-A:HOVER { 
+A:HOVER, DIV.tegels DIV:HOVER { 
 	color : #EF790C;
 }
 OL { 
@@ -69,6 +64,9 @@ LI {
 
 /* STIJLEN VOOR SPELREGELS =================================== */
 
+TABLE.spelregels {
+	margin-bottom : 5px;
+}
 .spelregels TH { 
 	text-align : left;
 	vertical-align : top;
@@ -94,7 +92,8 @@ SPAN {
 	left : 0px;
 	bottom : 0px;
 	font-size : 1.4rem;
-	background-color: #D6D6D6;
+	background-color: rgb(214, 214, 214);
+	z-index : 1000;
 }
 #menu A {
 	text-decoration : none;
@@ -125,6 +124,11 @@ DIV.witruimte {
 	clear : both;
 }
 
+DIV.rand {
+	height : 5px;
+	clear : both;
+}
+
 /* STIJL VOOR BEGRIPPENLIIJST =================================== */
 
 DIV.begrippen {
@@ -136,88 +140,92 @@ DIV.begrippen A:HOVER {
 	color : inherit;
 }
 
-/* STIJLEN VOOR HULPTABEL SLAGEN =================================== */
+/* STIJLEN VOOR SPELREGELTABELLEN =================================== */
 
-/* kolommen gelijke breedte geven */
-#slagen TD {
-	width : 16%;
+TABLE.spelregeltabel {
+	max-width : 750px;
+}
+TABLE.gelijke-kolommen {
+	table-layout : fixed;
+}
+.spelregeltabel TD {
+	text-align : center;
+	height : 65px;
+	border-top : solid 5px white;
+	border-right : solid 5px #FFFFFF;
+	padding : 5px;
+}
+.spelregeltabel TR TD:last-child {
+	border-right : none;
+}
+.spelregeltabel TD.normaal {
+	text-align : initial;
+	background-color : initial;
 }
 
-/* STIJLEN VOOR HULPTABEL STRAFFEN =================================== */
+/* STIJLEN VOOR TEGELS (INDEX EN INHOUD) =================================== */
+/* STRUCTUUR:
+   Een tegel is een DIV.
+   Om alle tegels heen zit een DIV met stijl 'tegels', die ervoor zorgt dat
+   alle DIV's daarbinnen het gedrag en uiterlijk van een tegel krijgen.
+   Elke tegel heeft boven en links een rand. Een negatieve marge op de 
+   omsluitende DIV zorgt ervoor dat er op de meest linker tegels toch geen
+   rand zichtbaar is */
 
-/* kolommen gelijke breedte geven */
-#straffen TD {
-	width : 20%;
+DIV.tegels {
+	margin-left : -5px;
 }
-
-/* STIJLEN VOOR INDEX ====================================== */
-
-/* Tegel dmv floating DIV zodat tegels over regels verdeeld kunnen worden
-   naar gelang de breedte van het scherm. Standaard kleur kan overschreven 
-   worden met stijlen verderop */
-DIV.tegel {
-	width : 20.3vw;
-	max-width : 6em;
+DIV.tegels DIV {
+	width : calc(25% - 5px);
+	max-width : 7em;
+	height : 75px;
 	float : left;
 	background-color : #F9F9F9;
+	text-align : center;
+	margin-top : 5px;
+	margin-left : 5px;
 }
 /* tegelvullende tabel in bovenstaande DIV tbv verticale centrering tekst */
-DIV.tegel TABLE {
+DIV.tegels DIV TABLE {
 	height : 100%;
 }
-/* geen padding want die heeft de DIV al via de cel-stijl */
-DIV.tegel TD {
-	padding : 0px;
+DIV.tegels DIV TD {
 	vertical-align : middle;
+	padding : 5px;
 }
+/* !important is nodig omdat als een tegel een stijl meekrijgt (voor het 
+   veranderen van de tegel-kleur) onderstaande anders geen effect meer zou
+   hebben, ook niet als op dit niveau geen hover kleur wordt ingesteld */
+DIV.tegels DIV:HOVER {
+	background-color : #99EEFF !important;
+}
+
 /* op de tegel hyperlinks niet onderstrepen en niet vet */
-DIV.tegel A {
+DIV.tegels DIV A {
 	text-decoration : none;
 	font-weight : normal;
 }
+DIV.tegels DIV A:HOVER {
+	color : darkblue;
+}
 /* stijl die de tegel aan het begin van een nieuwe regel plaatst */
-DIV.index-onderwerp {
+DIV.tegels DIV.index-onderwerp {
 	clear : left;
 }
 	
-/* STIJLEN VOOR ALLE HULPTABELLEN =================================== */
+/* KLEUREN VOOR TABELLEN, INDEX, INHOUD =================================== */
 
-/* aan de buitenkant van een tabel moeten er geen randen zijn, daarom
-   hebben cellen alleen boven en rechts een rand (cel-r).
-   Aan 1 kant is dan een cel nodig met alleen boven een rand (cel). */
-   
-/* NB: in de straffen-voor-verdediger tabel werkt gaat het niet goed als
-   de linker randen wit zijn in plaats van rechts. De tabel wordt te breed
-   en er verschijnt een horizontale scrollbar. Het gaat fout door de 
-   rechter cel die over twee rijen samengevoegd is. */
-   
-.cel, .cel-r, DIV.tegel {
-	text-align : center;
-	height : 4rem;
-	border-top : solid 5px white; 
-	padding : 5px;
-}
-.cel-r, DIV.tegel {
-	border-right : solid 5px #FFFFFF; 
-}
-
-/* STIJLEN VOOR ALLE HULPTABELLEN =================================== */
-
-DIV.max-breedte {
-	max-width : 750px;
-}
-
-.rood {
+.spelregeltabel TD.rood {
 	background-color : #FF0000;
 	color : #FFFFFF;
 }
-.geel, DIV.tegel.index-onderwerp {
+.spelregeltabel TD.geel, DIV.tegels DIV.index-onderwerp {
 	background-color : #FFBB00;
 }
-.groen {
+.spelregeltabel TD.groen {
 	background-color : #00FF00;
 }
-.grijs, DIV.tegel.index-link-hoofd {
+.spelregeltabel TD, DIV.tegels DIV.index-link-hoofd {
 	background-color : #EEEEEE;
 }
 </style>
@@ -225,6 +233,30 @@ DIV.max-breedte {
 
 <body>
 
+<a id="inhoud"></a>
+<table>
+<thead><tr><th>INHOUD</th></tr></thead>
+</table>
+<div class="tegels">
+<div><table><tr><td onClick="location.href='#1'"><a href="#1">speelveld</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#2'"><a href="#2">samen&shy;stelling teams</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#3'"><a href="#3">aan&shy;voerders</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#4'"><a href="#4">kleding en uit&shy;rusting</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#5'"><a href="#5">wedstrijd en resultaat</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#6'"><a href="#6">begin en her&shy;vatting</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#7'"><a href="#7">bal buiten speelveld</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#8'"><a href="#8">scoren van doel&shy;punten</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#9'"><a href="#9">alle spelers</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#10'"><a href="#10">doel&shy;verde&shy;digers</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#11'"><a href="#11">scheids&shy;rechters</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#12'"><a href="#12">straffen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13'"><a href="#13">uit&shy;voering straffen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#14'"><a href="#14">persoon&shy;lijke straffen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#begrippenlijst'"><a href="#begrippenlijst">termen en begrip&shy;pen</a></td></tr></table></div>
+</div>
+
+<div class="rand"></div>
+	
 <a id="1"></a>
 <table class="spelregels">
 <thead><tr><th>1</th><th>Speelveld</th></tr></thead>
@@ -271,8 +303,6 @@ Doelen staan buiten het speelveld in het midden van elke <a href="#achterlijn">a
 <div class="opmerking">KNHB: op kunstgrasvelden en bij bondswedstrijden van standaardteams moet rond het speelveld een vaste omheining staan, op minimaal 2 meter van een zijlijn en minimaal 4 meter van een achterlijn. Tevens moeten bij het speelveld twee teambanken staan, &eacute;&eacute;n voor elk van de teams, plaats biedende aan 9 personen. Zij moeten worden geplaatst aan &eacute;&eacute;n zijde van het speelveld, op minimaal 1 meter buiten de zijlijn en maximaal 10 meter ter weerszijden van de middenlijn.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="2"></a>
 <table class="spelregels">
@@ -345,8 +375,6 @@ KNHB: bij een ongeluk of ander bijzonder voorval kunnen de scheidsrechters de we
 </td></tr>
 </table>
 
-<br />
-
 <a id="3"></a>
 <table class="spelregels"><thead><tr><th>3</th><th>Aanvoerders</th></tr></thead>
 
@@ -369,8 +397,6 @@ Een <a href="#14">persoonlijke straf</a> wordt toegekend aan een aanvoerder die 
 <div class="opmerking">KNHB: aanvoerders dragen namens hun vereniging ook verantwoordelijkheid voor de correcte invulling en afhandeling van het wedstrijdformulier.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="4"></a>
 <table class="spelregels">
@@ -434,8 +460,6 @@ De bal is hard, wit (of een andere overeengekomen kleur die afwijkt van de onder
 </td></tr>
 </table>
 
-<br />
-
 <a id="5"></a>
 <table class="spelregels">
 <thead><tr><th>5</th><th>Wedstrijd en resultaat</th></tr></thead>
@@ -454,8 +478,6 @@ Het team dat de meeste doelpunten heeft gescoord, is de winnaar van de wedstrijd
 <div class="opmerking">KNHB: bepalingen over een shootoutserie als manieren om tot een beslissing te komen in een wedstrijd die met een gelijkspel is ge&euml;indigd, staan in het bondsreglement.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="6"></a>
 <table class="spelregels">
@@ -504,8 +526,6 @@ Als een strafbal is genomen en daaruit geen doelpunt is gescoord, wordt het spel
 </td></tr>
 </table>
 
-<br />
-
 <a id="7"></a>
 <table class="spelregels">
 <thead><tr><th>7</th><th>Bal buiten het speelveld</th></tr></thead>
@@ -532,8 +552,6 @@ Wanneer de bal over de achterlijn is gegaan zonder dat een doelpunt is gescoord,
 </td></tr>
 </table>
 
-<br />
-
 <a id="8"></a>
 <table class="spelregels">
 <thead><tr><th>8</th><th>Scoren van doelpunten</th></tr></thead>
@@ -543,8 +561,6 @@ Een doelpunt wordt gescoord wanneer de bal, nadat hij binnen de cirkel door een 
 <div class="opmerking">Spelen van de bal door een verdediger voor of nadat die door een aanvaller in de cirkel is geraakt, is hierop niet van invloed.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="9"></a>
 <table class="spelregels">
@@ -642,7 +658,6 @@ Spelers mogen geen voorwerpen of uitrustingsstukken op het veld, naar de bal of 
 Spelers mogen het spel niet vertragen om daardoor voordeel te behalen (tijdrekken).
 </td></tr>
 </table>
-<br />
 
 <a id="10"></a>
 <table class="spelregels">
@@ -677,8 +692,6 @@ Wanneer de bal buiten hun cirkel is, mogen doelverdedigers en veldspelers met de
 <div class="opmerking">Een veldspeler met de rechten van een doelverdediger wordt als veldspeler beschouwd als hij buiten zijn cirkel verdedigt.</div>
 </td></tr>
 </table>
-
-<br />
 
 <a id="11"></a>
 <table class="spelregels"><thead><tr><th>11</th><th>Spelregels: scheidsrechters</th></tr></thead>
@@ -728,8 +741,6 @@ Wanneer de bal een scheidsrechter, een niet-bevoegd persoon of enig los voorwerp
 </td></tr>
 </table>
 
-<br />
-
 <a id="12"></a>
 <table class="spelregels"><thead><tr><th>12</th><th>Straffen</th></tr></thead>
 
@@ -771,8 +782,6 @@ Als er sprake is van een nieuwe overtreding of van wangedrag nog voor een opgele
 </li></ol>
 </td></tr>
 </table>
-
-<br />
 
 <a id="13"></a>
 <table class="spelregels"><thead><tr><th>13</th><th>Uitvoering van straffen</th></tr></thead>
@@ -921,8 +930,6 @@ Straffen voor een overtreding tijdens het nemen van een strafbal:
 </li></ol>
 </table>
 
-<br />
-
 <a id="14"></a>
 <table class="spelregels"><thead><tr><th>14</th><th>Persoonlijke straffen</th></tr></thead>
 
@@ -978,7 +985,9 @@ KNHB: persoonlijke straffen voor teambegeleiders.
 
 <div class="begrippen">
 <a id="begrippenlijst"></a>
+<table>
 <h1>Termen en begrippen</h1>
+</table>
 
 <p><a id="23metergebied">23-metergebied</a> Het gebied dat wordt begrensd door de lijn op 22,90 meter van elke achterlijn en de aansluitende delen van de zijlijnen en achterlijn, de lijnen zelf meegerekend.</p>
 
@@ -1036,158 +1045,148 @@ E&eacute;n van de spelers van elk team op het veld die de rechten heeft van een 
 <table>
 <thead><tr><th>INDEX</th></tr></thead>
 </table>
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#12.2'"><a href="#12.2">vrije slag</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.2'"><a href="#12.2">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.2'"><a href="#13.2">nemen</a></td></tr></table></div>
+<div class="tegels">
+<div class="index-onderwerp"><table><tr><td onClick="location.href='#13.2'"><a href="#13.2">vrije slag</a></td></tr></table></div>
+<div class="index-link-hoofd"><table><tr><td onClick="location.href='#12.2'"><a href="#12.2">toe&shy;kennen</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#12.3'"><a href="#12.3">straf&shy;corner</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.3'"><a href="#12.3">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.3'"><a href="#13.3">nemen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td><a href="#13.7">straffen</a><br /><br /><i><a href="#strafcornertabel">tabel</a></i></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">hoog op doel</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">niet wisselen</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">wel wisselen</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#4.2strafcorner'"><a href="#4.2strafcorner">masker</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#9.15strafcorner'"><a href="#9.15strafcorner">los object</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.5'"><a href="#13.5">einde</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></td></tr></table></div>
+<div class="index-onderwerp"><table><tr><td onClick="location.href='#13.3'"><a href="#13.3">straf&shy;corner</a></td></tr></table></div>
+<div class="index-link-hoofd"><table><tr><td onClick="location.href='#12.3'"><a href="#12.3">toe&shy;kennen</a></td></tr></table></div>
+<div class="index-link-hoofd"><table><tr><td><a href="#13.7">straffen</a><br /><br /><i><a href="#strafcornertabel">tabel</a></i></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">hoog op doel</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">niet wisselen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">wel wisselen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#4.2strafcorner'"><a href="#4.2strafcorner">masker</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#9.15strafcorner'"><a href="#9.15strafcorner">los object</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.5'"><a href="#13.5">einde</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#12.4'"><a href="#12.4">straf&shy;bal</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#12.4'"><a href="#12.4">toe&shy;kennen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.8'"><a href="#13.8">nemen</a></td></tr></table></div>
-<div class="tegel index-link-hoofd"><table><tr><td onClick="location.href='#13.10'"><a href="#13.10">straffen</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.9'"><a href="#13.9">einde</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#6.6'"><a href="#6.6">hervatten</a></td></tr></table></div>
+<div class="index-onderwerp"><table><tr><td onClick="location.href='#13.8'"><a href="#13.8">straf&shy;bal</a></td></tr></table></div>
+<div class="index-link-hoofd"><table><tr><td onClick="location.href='#12.4'"><a href="#12.4">toe&shy;kennen</a></td></tr></table></div>
+<div class="index-link-hoofd"><table><tr><td onClick="location.href='#13.10'"><a href="#13.10">straffen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.9'"><a href="#13.9">einde</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#6.6'"><a href="#6.6">hervatten</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#9.8'"><a href="#9.8">hoge bal (9.8)</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#9.6'"><a href="#9.6">hoge bal (9.6)</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.2e'"><a href="#13.2e">bij vrije slag</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij strafbal</a></td></tr></table></div>
+<div class="index-onderwerp"><table><tr><td onClick="location.href='#9.6'"><a href="#9.6">hoge bal</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#9.8'"><a href="#9.8">hoge slag</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.2e'"><a href="#13.2e">bij vrije slag</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.3k'"><a href="#13.3k">tijdens straf&shy;corner</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij strafbal</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#slagentoegestaan'"><a href="#slagentoegestaan">slagen toe&shy;gestaan</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.2d'"><a href="#13.2d">bij vrije slag</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij straf&shy;bal</a></td></tr></table></div>
+<div class="index-onderwerp"><table><tr><td onClick="location.href='#slagentoegestaan'"><a href="#slagentoegestaan">slagen toe&shy;gestaan</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.2d'"><a href="#13.2d">bij vrije slag</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.3b'"><a href="#13.3b">bij nemen straf&shy;corner</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.8j'"><a href="#13.8j">bij straf&shy;bal</a></td></tr></table></div>
 
-<div class="tegel index-onderwerp"><table><tr><td onClick="location.href='#wisselen'"><a href="#wisselen">wissel&shy;en</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
-<div class="tegel"><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
-
+<div class="index-onderwerp"><table><tr><td onClick="location.href='#wisselen'"><a href="#wisselen">wissel&shy;en</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#2.3strafcorner'"><a href="#2.3strafcorner">tijdens straf&shy;corner</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#13.6'"><a href="#13.6">tijdens straf&shy;corner</a></td></tr></table></div>
+<div><table><tr><td onClick="location.href='#9.14'"><a href="#9.14">stick wisselen</a></td></tr></table></div>
+</div>
 
 <div class="witruimte"></div>
 
 <table><thead><tr><th>straf voor verdediger bij overtreding</th></tr></thead></table>
-<div class="max-breedte">
-<table id="straffen">
-<tr><td class="cel-r" rowspan="2">
-</td><td class="grijs cel-r" rowspan="2">geen opzet
-</td><td class="grijs cel-r" colspan="2">opzet
-</td><td class="grijs cel" rowspan="2">doel&shy;punt voor&shy;komen
+<table class="spelregeltabel gelijke-kolommen">
+<tr><td class="normaal" rowspan="2">
+</td><td rowspan="2">geen opzet
+</td><td colspan="2">opzet
+</td><td rowspan="2">doel&shy;punt voor&shy;komen
 </td></tr>
 
-<tr><td class="grijs cel-r">tegen speler <i>zonder</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
-</td><td class="grijs cel">tegen speler <i>met</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
+<tr><td>tegen speler <i>zonder</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
+</td><td>tegen speler <i>met</i> bal&shy;bezit of moge&shy;lijk&shy;heid bal te spelen
 </td></tr>
 
-<tr><td class="grijs cel-r"><a href="#cirkel">cirkel</a>
-</td><td class="geel cel-r"><a href="#12.3a">straf&shy;corner</a>
-</td><td class="geel cel-r"><a href="#12.3b">straf&shy;corner</a>
-</td><td class="rood cel-r"><a href="#12.4b">straf&shy;bal</a>
-</td><td class="rood cel"><a href="#12.4a">straf&shy;bal</a>
+<tr><td><a href="#cirkel">cirkel</a>
+</td><td class="geel"><a href="#12.3a">straf&shy;corner</a>
+</td><td class="geel"><a href="#12.3b">straf&shy;corner</a>
+</td><td class="rood"><a href="#12.4b">straf&shy;bal</a>
+</td><td class="rood"><a href="#12.4a">straf&shy;bal</a>
 </td></tr>
 
-<tr><td class="grijs cel-r"><a href="#23metergebied">23 meter</a>
-</td><td class="groen cel-r"><a href="#12.2c">vrije slag</a>
-</td><td colspan="2" class="geel cel-r"><a href="#12.3c">straf&shy;corner</a>
+<tr><td><a href="#23metergebied">23 meter</a>
+</td><td class="groen"><a href="#12.2c">vrije slag</a>
+</td><td colspan="2" class="geel"><a href="#12.3c">straf&shy;corner</a>
 </td><td>
 </td></tr>
 
-<tr><td class="grijs cel-r">rest
-</td><td colspan="3" class="groen cel-r"><a href="#12.2a">vrije slag</a>
+<tr><td>rest
+</td><td colspan="3" class="groen"><a href="#12.2a">vrije slag</a>
 </td><td>
 </td></tr>
 </table>
-</div>
 
-<br />
+<div class="rand"></div>
 
 <a id="strafcornertabel"></a>
 <table><thead><tr><th>straf bij overtreding tijdens strafcorner</th></tr></thead></table>
-<div class="max-breedte">
-<table>
-<tr><td class="grijs cel">
+<table class="spelregeltabel">
+<tr><td>
 opnieuw nemen
-</td><td>
+</td><td class="normaal">
 <ul><li><a href="#13.7a">aangever niet met &eacute;&eacute;n voet buiten het veld</a>
 </li><li><a href="#13.7c2">verdediger te vroeg over middenlijn</a>
 </li></ul>
 </td>
-<tr><td class="grijs cel">
+<tr><td>
 speler achter middenlijn +<br />
 opnieuw nemen
-</td><td>
+</td><td class="normaal">
 <ul><li><a href="#13.7b">schijnbeweging aangever</a>
 </li><li>te vroeg in cirkel: <a href="#13.7c">verdediger</a>, <a href="#13.7d">doelverdediger</a> of <a href="#13.7e">aanvaller</a>
 </li></ul>
 </td></tr>
-<tr><td class="grijs cel">
+<tr><td>
 vrije slag verdediging
-</td><td>
+</td><td class="normaal">
 <a href="#13.7f">andere overtreding</a> aanvaller
 </td></tr>
 </table>
-</div>
 
-<br />
+<div class="rand"></div>
 
 <a id="slagentoegestaan"></a>
 <table><thead><tr><th>slagen toegestaan</th></tr></thead></table>
-<div class="max-breedte">
-<table id="slagen">
-<tr><td class="cel-r">
-</td><td class="grijs cel-r"><a href="#push">push</a>
-</td><td class="grijs cel-r"><a href="#slag">slag</a>
-</td><td class="grijs cel-r"><a href="#flick">flick</a>
-</td><td class="grijs cel-r"><a href="#scoop">scoop</a>
-</td><td class="grijs cel">sleep
+<table class="spelregeltabel gelijke-kolommen">
+<tr><td class="normaal">
+</td><td><a href="#push">push</a>
+</td><td><a href="#slag">slag</a>
+</td><td><a href="#flick">flick</a>
+</td><td><a href="#scoop">scoop</a>
+</td><td>sleep
 </td></tr>
 
-<tr><td class="grijs cel-r"><a href="#13.2d">vrije slag</a>
-</td><td class="groen cel-r">ja
-</td><td class="geel cel-r"><a href="#13.2e">niet hoog</a>
-</td><td class="groen cel-r">ja
-</td><td class="groen cel-r">ja
-</td><td class="grijs cel">?
+<tr><td><a href="#13.2d">vrije slag</a>
+</td><td class="groen">ja
+</td><td class="geel"><a href="#13.2e">niet hoog</a>
+</td><td class="groen">ja
+</td><td class="groen">ja
+</td><td>?
 </td></tr>
 
-<tr><td class="grijs cel-r"><a href="#13.3b">aange&shy;ven<br />straf&shy;cor&shy;ner</a>
-</td><td class="geel cel-r"><a href="#13.3b">niet hoog</a>
-</td><td class="geel cel-r"><a href="#13.3b">niet hoog</a>
-</td><td class="rood cel-r"><a href="#13.3b">nee</a>
-</td><td class="rood cel-r"><a href="#13.3b">nee</a>
-</td><td class="grijs cel">?
+<tr><td><a href="#13.3b">aan&shy;ge&shy;ven<br />straf&shy;cor&shy;ner</a>
+</td><td class="geel"><a href="#13.3b">niet hoog</a>
+</td><td class="geel"><a href="#13.3b">niet hoog</a>
+</td><td class="rood"><a href="#13.3b">nee</a>
+</td><td class="rood"><a href="#13.3b">nee</a>
+</td><td>?
 </td></tr>
 
-<tr><td class="grijs cel-r"><a href="#13.8j">straf&shy;bal</a>
-</td><td class="groen cel-r">ja
-</td><td class="rood cel-r"><a href="#13.8j">nee</a>
-</td><td class="groen cel-r">ja
-</td><td class="groen cel-r">ja
-</td><td class="rood cel"><a href="#strafbalslepen">nee</a>
+<tr><td><a href="#13.8j">straf&shy;bal</a>
+</td><td class="groen">ja
+</td><td class="rood"><a href="#13.8j">nee</a>
+</td><td class="groen">ja
+</td><td class="groen">ja
+</td><td class="rood"><a href="#strafbalslepen">nee</a>
 </td></tr>
-
 </table>
-</div>
-
-<div class="witruimte"></div>
 
 <div id="menu">
 <table><tr><td>
+<a href="#inhoud">INHOUD</a>
 <a href="#index">INDEX</a>
 <a href="#1" title="Speelveld">1</a>
 <a href="#2" title="Samenstelling van teams">2</a>
