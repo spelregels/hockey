@@ -234,10 +234,13 @@ function markeren() {
   var x = document.getElementsByTagName("TABLE");
   var i;
   for (i = 0; i < x.length; i++) {
-    if (elementInViewport(x[i])) {
-		document.querySelectorAll('#menu a[href="#' + x[i].id + '"]')[0].classList.add('actief')  }
-	else { 
-		document.querySelectorAll('#menu a[href="#' + x[i].id + '"]')[0].classList.remove('actief') }
+	var elcl = document.querySelectorAll('#menu a[href="#' + x[i].id + '"]')[0];
+	if (typeof(elcl) != 'undefined') {
+		if (elementInViewport(x[i])) {
+			document.querySelectorAll('#menu a[href="#' + x[i].id + '"]')[0].classList.add('actief')  }
+		else { 
+			document.querySelectorAll('#menu a[href="#' + x[i].id + '"]')[0].classList.remove('actief') }
+	}
   }
 }
 
@@ -749,7 +752,7 @@ Scheidsrechters fluiten om:
 </li><li>een <a href="#bully">bully</a> te laten beginnen;
 </li><li>een <a href="#12">straf</a> op te leggen;
 </li><li>het <a href="#13.8g">begin</a> en het <a href="#13.9">einde van een strafbal</a> aan te geven;
-</li><li>een <a href="8.1">doelpunt</a> aan te geven;
+</li><li>een <a href="#8.1">doelpunt</a> aan te geven;
 </li><li>het spel te <a href="#beginslag">hervatten nadat een doelpunt</a> is gescoord;
 </li><li>de wedstrijd te <a href="#6.6">hervatten na het nemen van een strafbal</a> als er geen doelpunt is gescoord;
 </li><li>de wedstrijd te onderbreken voor het <a href="#2.3h">wisselen van een doelverdediger</a> en daarna weer te hervatten;
