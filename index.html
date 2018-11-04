@@ -332,6 +332,14 @@ document.addEventListener('DOMContentLoaded', function() {
    markeren();
 });
 </script>
+<script>
+// script om op kleine schermen de tekst in het menu te verkorten
+document.addEventListener('DOMContentLoaded', function() {
+	if (screen.width <= 600) {
+		document.getElementById('menu-inhoud').innerHTML = 'I';
+	}
+});
+</script>
 </head>
 
 <body>
@@ -1253,7 +1261,7 @@ vrije slag verdediging
 </div>
 
 <div id="menu">
-<a href="#inhoud">INHOUD</a>
+<a href="#inhoud" id="menu-inhoud">INHOUD</a>
 <a href="#1" title="Speelveld">1</a>
 <a href="#2" title="Samenstelling van teams">2</a>
 <a href="#3" title="Aanvoerders">3</a>
