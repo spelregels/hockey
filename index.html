@@ -336,8 +336,12 @@ document.addEventListener('DOMContentLoaded', function() {
 // script om op kleine schermen de tekst in het menu te verkorten
 document.addEventListener('DOMContentLoaded', function() {
 	if (screen.width <= 700) {
-		document.getElementById('menu-inhoud').innerHTML = '&#8679;'; //▲ &#8679; &#x2b06; &#x2912;
-		document.getElementById('menu-termen').innerHTML = '?	';
+		document.getElementById('menu-inhoud').innerHTML = '&#8679;';
+		// padding bottom op 0 omdat anders het menu hoger wordt door het symbool
+		document.getElementById('menu-inhoud').style.paddingBottom = '0px';
+		document.getElementById('menu-termen').innerHTML = '&#x2754;';
+		document.getElementById('menu-termen').style.paddingLeft = '0px';
+		document.getElementById('menu-termen').style.paddingRight = '0px';
 	}
 });
 </script>
