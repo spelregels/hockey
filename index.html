@@ -339,7 +339,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // script om op kleine schermen de tekst in het menu te verkorten
 document.addEventListener('DOMContentLoaded', function() {
 	if (screen.width <= 700) {
-		document.getElementById('menu-inhoud').innerHTML = '^';
+		document.getElementById('menu-inhoud').innerHTML = '&#x2912;';
+		document.getElementById('menu-inhoud').style.paddingBottom = '0px';
 		document.getElementById('menu-termen').innerHTML = '?';
 	}
 });
