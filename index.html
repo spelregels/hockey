@@ -338,7 +338,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 // script om op kleine schermen de tekst in het menu te verkorten
 document.addEventListener('DOMContentLoaded', function() {
-	if (screen.width <= 700) {
+	var x = document.getElementById('menu').scrollWidth;
+
+	if (screen.width <= x) {
 		document.getElementById('menu-inhoud').innerHTML = '↑';
 		document.getElementById('menu-inhoud').style.paddingTop = '0px';
 		document.getElementById('menu-inhoud').style.paddingBottom = '0px';
