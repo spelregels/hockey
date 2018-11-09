@@ -64,7 +64,8 @@ LI {
 	padding-top : 5px;
 }
 .knipper {
-	background-color : #E5E5E5 !important;
+	transition : background-color 1s;
+	background-color : #FFE99C !important;
 }	
 
 /* STIJLEN VOOR SPELREGELS =================================== */
@@ -283,13 +284,11 @@ function teKleurenObject(x) {
 
 // Tijdelijke verandering van achtergrondkleur
 function knipper(x) {
-	if ((x.tagName != 'TABLE') && (x.scrollHeight < window.innerHeight * 0.8)) {
-		setTimeout(function() {
-			x.classList.add('knipper');
-		}, 500);
+	if ((x.scrollHeight < window.innerHeight * 0.70) && (x.id != 'inhoud')) {
+		x.classList.add('knipper');
 		setTimeout(function() {
 			x.classList.remove('knipper');
-		}, 2500);
+		}, 2000);
 	}
 }
 
@@ -312,6 +311,7 @@ function navigatie(el) {
 			var z = y.tHead.clientHeight; 
 			window.scrollBy(0, -z);
 			}
+		
 		// Als de target een DIV is, dan even highlighten om duidelijker
 		// te maken dat dit de tekst is waarnaar gesprongen is.
 		knipper(teKleurenObject(x));
