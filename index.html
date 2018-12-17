@@ -286,7 +286,7 @@ function knipper(x) {
 		x.classList.add('knipper');
 		setTimeout(function() {
 			x.classList.remove('knipper');
-		}, (0.9 - x.scrollHeight/window.innerHeight) * 10000);
+		}, (0.85 - x.scrollHeight/window.innerHeight) * 15000);
 	}
 }
 
@@ -296,23 +296,36 @@ function navigatie(el) {
 	if(el.tagName=='A') var doel = el.href.match(/#(.+)/);
 	
 	if (doel != null) {
-		// Verwijzing naar target element ophalen obv id
-		var x = document.getElementById(doel[1]);
+		// Verwijzing naar doelelement ophalen obv id
+		var doel = document.getElementById(doel[1]);
+
+		// In alle gevallen is het doelelement het element dat gehighlight moet worden.
+		// Afwijkend scrollen (hoger) is soms nodig om de juiste context van het doelelement
+		// in beeld te krijgen.
+		
+		// Als het doelelement het custom attribute 'data-scrolltoid' heeft, dan geeft
+		// dat de id van het element waarnaar gescrolld moet worden.
+		// Ontbreekt zo'n custom attribute, dan moet gewoon naar het doelelement gescrolld worden.
+		
+		var scrollnaar = doel.getAttribute('data-scrolltoid');
+		if (scrollnaar != null) { scrollnaar = document.getElementById(scrollnaar); }
+		if (scrollnaar == null) { scrollnaar = doel; }
+		
 		history.pushState('','');
-		// Scrollen naar het target element
-		x.scrollIntoView();
-		// Controleren of target element in de spelregels staat
-		var y = x.closest(".spelregels");
-		// Zo ja dan de target onder de sticky tabelheader vandaan
-		// scrollen (behalve als het doelelement de tabel zelf is)
-		if ((y != null) && (y != x)) { 
+		// Scrollen naar juiste scrollbestemming, zie toelichting hierboven.
+		scrollnaar.scrollIntoView();
+		// Controleren of scrollbestemming in de spelregels staat
+		var y = scrollnaar.closest(".spelregels");
+		// Zo ja dan het scrollbestemming onder de sticky tabelheader vandaan
+		// scrollen, behalve als de scrollbestemming de tabel zelf is (dan gaat het al goed).
+		if ((y != null) && (y != scrollnaar)) { 
 			var z = y.tHead.clientHeight; 
 			window.scrollBy(0, -z);
 			}
 		
-		// Target even highlighten om duidelijker te maken dat dit
+		// Doelelement highlighten om duidelijker te maken dat dit 
 		// de tekst is waarnaar gesprongen is.
-		knipper(x);
+		knipper(doel);
 	}
 }
 
@@ -788,9 +801,9 @@ Spelers mogen niet opzettelijk in het doel dat hun tegenstanders verdedigen kome
 Spelers mogen hun stick niet ruilen tussen toekennen en voltooien van een strafcorner of een strafbal, tenzij deze stick niet meer aan de specificaties voldoet.
 </td></tr>
 
-<tr><th>9.15</th><td>
+<tr id="9.15"><th>9.15</th><td>
 Spelers mogen geen voorwerpen of uitrustingsstukken op het veld, naar de bal of naar een speler, scheidsrechter of andere persoon gooien.
-<div class="opmerking per2017" id="9.15strafcorner">Indien bij een strafcorner de bal een los stuk beschermende kleding, een kniebeschermer of een masker raakt dat op het veld ligt, wordt het spel hervat met een <a href="#13.2">vrije slag</a> als dit buiten de cirkel gebeurt en met een <a href="#13.3">strafcorner</a> als dit binnen de cirkel gebeurt.</div>
+<div class="opmerking per2017" id="9.15strafcorner" data-scrolltoid="9.15">Indien bij een strafcorner de bal een los stuk beschermende kleding, een kniebeschermer of een masker raakt dat op het veld ligt, wordt het spel hervat met een <a href="#13.2">vrije slag</a> als dit buiten de cirkel gebeurt en met een <a href="#13.3">strafcorner</a> als dit binnen de cirkel gebeurt.</div>
 </td></tr>
 
 <tr><th>9.16</th><td>
@@ -999,8 +1012,8 @@ Een strafcorner is ten einde als:
 
 <tr id="13.6"><th>13.6</th><td>
 Wanneer de bal na het nemen van een strafcorner een tweede maal buiten de cirkel komt, geldt:
-<ol><li>er mag weer gewisseld worden;
-</li><li>een uitspeelstrafcorner is ten einde.
+<ol><li id="13.6a" data-scrolltoid="13.6">er mag weer gewisseld worden;
+</li><li id="13.6b" data-scrolltoid="13.6">een uitspeelstrafcorner is ten einde.
 </li></ol>
 </td></tr>
 
@@ -1160,12 +1173,12 @@ KNHB: persoonlijke straffen voor teambegeleiders.
 <div><a href="#strafcornertabel">over&shy;treding hulptabel</a></div>
 <div><a href="#13.3k">hoog op doel</a></div>
 <div><a href="#2.3strafcorner">niet wisselen</a></div>
-<div><a href="#13.6">wel wisselen</a></div>
+<div><a href="#13.6a">wel wisselen</a></div>
 <div><a href="#9.14">stick wisselen</a></div>
 <div><a href="#4.2strafcorner">masker</a></div>
 <div><a href="#9.15strafcorner">los object</a></div>
 <div><a href="#13.5">einde</a></div>
-<div><a href="#13.6">einde uitspeel&shy;straf&shy;corner</a></div>
+<div><a href="#13.6b">einde uitspeel&shy;straf&shy;corner</a></div>
 
 <div class="index-onderwerp"><a href="#12.4">straf&shy;bal</a></div>
 <div class="index-link-hoofd"><a href="#13.8">nemen</a></div>
@@ -1189,7 +1202,7 @@ KNHB: persoonlijke straffen voor teambegeleiders.
 
 <div class="index-onderwerp"><a href="#wisselen">wissel&shy;en</a></div>
 <div><a href="#2.3strafcorner">tijdens straf&shy;corner</a></div>
-<div><a href="#13.6">tijdens straf&shy;corner</a></div>
+<div><a href="#13.6a">tijdens straf&shy;corner</a></div>
 <div><a href="#9.14">stick wisselen</a></div>
 </div>
 </td></tr>
