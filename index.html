@@ -275,16 +275,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Tijdelijke verandering van achtergrondkleur
-// Alleen indien target niet het grootste deel van het scherm vult
-// Hoe kleiner de target, hoe langer deze gehighlight moet worden
+var knipperTimer;
 function knipper(x) {
+	// Eventuele actieve markering en timeout daarvan uitzetten.
+	clearTimeout(knipperTimer);
 	var elems = document.querySelectorAll(".knipper");
 	[].forEach.call(elems, function(el) {
 		el.classList.remove("knipper");
 	});
+	// Alleen markeren indien target niet het grootste deel van het scherm vult.
+	// Hoe kleiner de target, hoe langer deze gehighlight moet worden
 	if ((x.scrollHeight < window.innerHeight * 0.70) && (x.id != 'inhoud')) {
 		x.classList.add('knipper');
-		setTimeout(function() {
+		knipperTimer = setTimeout(function() {
 			x.classList.remove('knipper');
 		}, (0.85 - x.scrollHeight/window.innerHeight) * 15000);
 	}
@@ -899,17 +902,17 @@ Voordeel: er wordt alleen een straf opgelegd wanneer een speler of een team nade
 
 <tr id="12.2"><th>12.2</th><td>
 Een <a href="#13.2">vrije slag</a> wordt gegeven aan de tegenpartij voor:
-<ol><li id="12.2a">een overtreding van een speler in het gebied tussen de 23-meterlijnen;
+<ol><li id="12.2a" data-scrolltoid="12.2">een overtreding van een speler in het gebied tussen de 23-meterlijnen;
 </li><li>een overtreding van een aanvaller in het 23-metergebied van de tegenpartij;
-</li><li id="12.2c">een onopzettelijke overtreding van een verdediger in zijn 23-metergebied, maar buiten zijn cirkel.
+</li><li id="12.2c" data-scrolltoid="12.2">een onopzettelijke overtreding van een verdediger in zijn 23-metergebied, maar buiten zijn cirkel.
 </li></ol>
 </td></tr>
 
 <tr id="12.3"><th>12.3</th><td>
 Een <a href="#13.3">strafcorner</a> wordt toegekend:
-<ol><li id="12.3a">voor een overtreding van een verdediger in zijn cirkel, waarbij niet het maken van een doelpunt wordt voorkomen;
-</li><li id="12.3b">voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die geen balbezit heeft, noch een mogelijkheid heeft de bal te spelen;
-</li><li id="12.3c">voor een opzettelijke overtreding van een verdediger buiten zijn cirkel, maar binnen zijn 23-metergebied;
+<ol><li id="12.3a" data-scrolltoid="12.3">voor een overtreding van een verdediger in zijn cirkel, waarbij niet het maken van een doelpunt wordt voorkomen;
+</li><li id="12.3b" data-scrolltoid="12.3">voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die geen balbezit heeft, noch een mogelijkheid heeft de bal te spelen;
+</li><li id="12.3c" data-scrolltoid="12.3">voor een opzettelijke overtreding van een verdediger buiten zijn cirkel, maar binnen zijn 23-metergebied;
 </li><li>voor het opzettelijk over de achterlijn spelen van de bal door een verdediger;
 <div class="opmerking">KNHB: doelverdedigers en veldspelers met de rechten van een doelverdediger mogen de bal van hun stick, hun beschermende uitrusting of enig deel van hun lichaam in iedere gewenste richting laten afkaatsen, ook over de achterlijn.</div>
 </li><li>wanneer de bal in de cirkel komt vast te zitten in de kleding of uitrusting van een (doel)verdediger.
@@ -918,8 +921,8 @@ Een <a href="#13.3">strafcorner</a> wordt toegekend:
 
 <tr id="12.4"><th>12.4</th><td>
 Een <a href="#13.8">strafbal</a> wordt toegekend:
-<ol><li id="12.4a">voor een overtreding van een verdediger in zijn cirkel, waardoor het waarschijnlijk maken van een doelpunt wordt voorkomen;
-</li><li id="12.4b">voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die in balbezit is of een mogelijkheid heeft om de bal te spelen.
+<ol><li id="12.4a" data-scrolltoid="12.4">voor een overtreding van een verdediger in zijn cirkel, waardoor het waarschijnlijk maken van een doelpunt wordt voorkomen;
+</li><li id="12.4b" data-scrolltoid="12.4">voor een opzettelijke overtreding van een verdediger in zijn cirkel tegen een tegenstander die in balbezit is of een mogelijkheid heeft om de bal te spelen.
 </li></ol>
 </td></tr>
 
@@ -934,7 +937,7 @@ Als er sprake is van een nieuwe overtreding of van wangedrag nog voor een opgele
 
 <table id="13" class="spelregels"><thead><tr><th>13</th><th>Uitvoering van straffen</th></tr></thead>
 
-<tr><th>13.1</th><td>
+<tr id="13.1"><th>13.1</th><td>
 Plaats van de vrije slag:
 <ol><li>Een vrije slag wordt genomen nabij de plaats waar de overtreding gebeurde.
 <div class="opmerking">‘Nabij’ betekent binnen speelafstand van de plaats van de overtreding en zonder daar een aanzienlijk voordeel uit te verkrijgen.
@@ -1052,7 +1055,7 @@ Bepalingen voor het nemen van een strafbal:
 </li><li>De aanvaller mag de bal niet spelen voordat het fluitsignaal is gegeven. <div class="opmerking">De speler die de strafbal neemt noch de doelverdediger mogen het nemen van de strafbal ophouden of vertragen.</div>
 </li><li>De aanvaller mag niet doen alsof hij de bal speelt.
 </li><li id="13.8j">De aanvaller mag de bal met een <a href="#push">push</a>, <a href="#flick">flick</a> of <a href="#scoop">scoop</a> en op iedere hoogte spelen.
-<div class="opmerking" id="strafbalslepen">Het is niet toegestaan de bal bij het nemen van een strafbal te slepen (dragging).</div>
+<div class="opmerking" id="strafbalslepen" data-scrolltoid="13.8j">Het is niet toegestaan de bal bij het nemen van een strafbal te slepen (dragging).</div>
 </li><li>De aanvaller mag de bal slechts één keer spelen en mag na het spelen van de bal de doelverdediger noch de bal benaderen.
 </li></ol>
 </td></tr>
@@ -1166,6 +1169,7 @@ KNHB: persoonlijke straffen voor teambegeleiders.
 <div class="tegels">
 <div class="index-onderwerp"><a href="#12.2">vrije slag</a></div>
 <div class="index-link-hoofd"><a href="#13.2">nemen</a></div>
+<div><a href="#13.1">plaats</a></div>
 	
 <div class="index-onderwerp"><a href="#12.3">straf&shy;corner</a></div>
 <div class="index-link-hoofd"><a href="#13.3">nemen</a></div>
@@ -1235,7 +1239,7 @@ KNHB: persoonlijke straffen voor teambegeleiders.
 </td><td>
 </td></tr>
 
-<tr><td>rest
+<tr><td>eigen helft
 </td><td colspan="3" class="groen"><a href="#12.2a">vrije slag</a>
 </td><td>
 </td></tr>
