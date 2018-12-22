@@ -64,17 +64,22 @@ UL {
 LI { 
 	padding-top : 5px;
 }
-.knipper SPAN.nadruk, #begrippenlijst SPAN {
-	font-weight : bold;
-	color : rgb(80,80,80);
-}
-.knipper.opmerking SPAN.nadruk {
-	color : rgb(150,150,150);
-}
+
+/* STIJLEN VOOR HIGHLIGHT VAN TEKST WAARNAAR VIA LINK NAAR GESPRONGEN WORDT */
+
 .knipper {
 	transition : background-color 1s;
 	background-color : #fff099;
-}	
+}
+/* benadrukte tekst (.nadruk) wordt hierbij dikgedrukt gemaakt, waarbij de 
+   tekstkleur iets lichter gemaakt wordt om de nadruk niet te sterk te maken */	
+.knipper SPAN.nadruk, #begrippenlijst SPAN {
+	font-weight : bold;
+	color : rgb(70,70,70);
+}
+.knipper.opmerking SPAN.nadruk {
+	color : rgb(140,140,140);
+}
 
 /* STIJLEN VOOR SPELREGELS =================================== */
 
@@ -287,12 +292,13 @@ function knipper(x) {
 		el.classList.remove("knipper");
 	});
 	// Alleen markeren indien target niet het grootste deel van het scherm vult.
-	// Hoe kleiner de target, hoe langer deze gehighlight moet worden
-	if ((x.scrollHeight < window.innerHeight * 0.70) && (x.id != 'inhoud')) {
+	// Bij beschikbare ruimte wordt er een vaste waarde afgetrokken ivm header en menu.
+	// Hoe kleiner de target, hoe langer deze gehighlight moet worden.
+	if ((x.scrollHeight < (window.innerHeight - 100) * 0.85) && (x.id != 'inhoud')) {
 		x.classList.add('knipper');
 		knipperTimer = setTimeout(function() {
 			x.classList.remove('knipper');
-		}, (0.85 - x.scrollHeight/window.innerHeight) * 15000);
+		}, (0.85 - x.scrollHeight/(window.innerHeight - 100)) * 15000);
 	}
 }
 
