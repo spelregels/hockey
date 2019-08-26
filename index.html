@@ -149,11 +149,6 @@ SPAN.per2019 {
 
 /* STIJLEN VOOR HET MENU ONDERIN DE PAGINA =================================== */
 
-/* extra DIV is nodig om breedte van menu-items te kunnen bepalen, en daarmee
-   of inkorting van de tekst nodig is, zie script daarvoor */
-#menu-tekst {
-	width : fit-content;
-}
 #menu {
 	width : 100%;
 	position : fixed;
@@ -474,7 +469,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 // script voor aanpassingen op kleine schermen (aanname dat dat mobiele telefoons zijn
 document.addEventListener('DOMContentLoaded', function() {
-	var x = document.getElementById('menu-tekst').scrollWidth;
+	var x = document.getElementById('menu').scrollWidth;
 
 	// als menu breder dan scherm, dan tekst in menu inkorten
 	if (screen.width < x) {
@@ -533,7 +528,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <tr><th>1.1</th><td>
 Het speelveld is rechthoekig, 91,40 meter lang en 55,00 meter breed.
-<a onclick="alert('scherm: ' + screen.width + ' - menu: ' + document.getElementById('menu-tekst').scrollWidth)">test</a>
 <div class="opmerking">KNHB: de KNHB kan voor bepaalde categorieën wedstrijden nadere aanwijzingen voor de belijning van velden geven.</div>
 </td></tr>
 
@@ -1481,7 +1475,6 @@ vrije slag verdediging
 </table>
 
 <div id="menu">
-<div id="menu-tekst">
 <a href="#inhoud" id="menu-inhoud">INHOUD</a>
 <a href="#1" title="Speelveld">1</a>
 <a href="#2" title="Samenstelling van teams">2</a>
@@ -1499,7 +1492,6 @@ vrije slag verdediging
 <a href="#14" title="Persoonlijke straffen">14</a>
 <a href="#begrippenlijst" id="menu-termen">TERMEN</a>
 <a href="#index">INDEX</a>
-</div>
 </div>
 </section>
 
