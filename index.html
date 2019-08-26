@@ -470,9 +470,6 @@ document.addEventListener('DOMContentLoaded', function() {
 // script voor aanpassingen op kleine schermen (aanname dat dat mobiele telefoons zijn
 document.addEventListener('DOMContentLoaded', function() {
 	var x = document.getElementById('menu').scrollWidth;
-	var y = screen.width;
-	if ((navigator.userAgent.match(/(iPad|iPhone|iPod)/i)) && (Math.abs(window.orientation) == 90)) { y = screen.hight };
-	alert (y);
 
 	// als menu breder dan scherm, dan tekst in menu inkorten
 	if (screen.width < x) {
