@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	var x = document.getElementById('menu').scrollWidth;
 
 	// als menu breder dan scherm, dan tekst in menu inkorten
-	if (screen.width < x) {
+	if ((screen.width < x) && (navigator.userAgent != 'iPad')) {
 		document.getElementById('menu-inhoud').innerHTML = '↑';
 		document.getElementById('menu-inhoud').style.paddingTop = '0px';
 		document.getElementById('menu-inhoud').style.paddingBottom = '0px';
