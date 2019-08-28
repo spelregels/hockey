@@ -372,10 +372,10 @@ function navigatie(el) {
 			var artikel = doel.closest("tr");
 
 			// Zoeken bovenliggend lijstitem uit geordende lijst = lid binnen artikel.
-			var artikellid = doel.closest("ol li");
+			var artikellid = doel.closest("td li");
 
 			// Zoeken bovenliggend div in lijstitem uit geordende lijst = paragraaf binnen lid binnen artikel.
-			var artikellidparagraaf = doel.closest("ol li div");
+			var artikellidparagraaf = doel.closest("td li div");
 
 			// Indien bovenliggend artikel gevonden.
 			if (artikel != null) {
