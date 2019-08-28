@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	// van de anchor wordt dan namelijk helemaal bovenaan het scherm gezet, 
 	// met de sticky tabelkop eroverheen. Het javascript houdt rekening met de
 	// hoogte van de header, en plaatst de target verder naar beneden.
-	var x = document.querySelectorAll('a[href^="#"]');
+	var x =  document.querySelectorAll('a[href^="#"]');
 	var i;
 	for (i = 0; i < x.length; ++i) {
 		x[i].onclick = function() {navigatie(this); return false;};
