@@ -25,7 +25,7 @@ TABLE {
 	width : 100%;
 	/* header staat vaak 1 pixelrij onder de bovenkant van de pagina, je ziet dan de tekst ook
 	   op die pixelrij voorbij komen, de negatieve marge lost dit op */
-	margin-top : -1px;
+	margin-top : 0px;
 }
 THEAD {
 	border : none; 
@@ -432,10 +432,10 @@ function navigatie(el) {
 		// te worden, dit gaat wel goed.
 		// De +1 in de scroll-hoeveelheid heeft te maken met de negatieve top-marge op tabellen, zie de TABEL stijl voor informatie.
 		if ((headerHoogte > 0) && (y != scrollnaar)) {
-			window.scrollBy(0, -headerHoogte + 1);
+			window.scrollBy(0, -headerHoogte + 0);
 		}
 		else {
-			window.scrollBy(0, 1);
+			window.scrollBy(0, 0);
 		}
 		
 		// Doelelement highlighten om duidelijker te maken dat dit de tekst is waarnaar gesprongen is.
