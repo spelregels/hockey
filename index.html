@@ -471,15 +471,21 @@ function markeren() {
 			// als de tabel zichtbaar weergegeven wordt
 			if (elementInViewport(x[i])) {
 				// als het de *eerste* tabel is die zichtbaar is
-				// dan op menu-item stijl actief aanzetten (en zichtbaar weghalen)
 				if (eerste) {
 					eerste = false;
-					elcl.classList.remove('zichtbaar')
-					elcl.classList.add('actief');
-					// menu-item in beeld scrollen als dat niet volledig in beeld is
-					scrollHorizontal (elcl);
+					// vaststellen of menu-item al actief is
+					var alactief = false;
+					if (elcl.classList.contains('actief')) { alactief = true; }
+					// als het menu-item niet al als actief gemarkeerd is
+					if (!(alactief)) {
+						// op menu-item actief-stijl aanzetten (en zichtbaar-stijl weghalen)
+						elcl.classList.remove('zichtbaar')
+						elcl.classList.add('actief');
+						// menu-item in beeld scrollen als dat niet volledig in beeld is
+						scrollHorizontal (elcl);
+					}
 				}
-				// op volgende zichtbare tabellen stijl zichtbaar aanzetten (en actief weghalen)
+				// op volgende zichtbare tabellen zichtbaar-stijl aanzetten (en actief-stijl weghalen)
 				else {
 					elcl.classList.remove('actief')
 					elcl.classList.add('zichtbaar');
